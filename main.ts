@@ -97,6 +97,32 @@ namespace bitbot {
         }
     }
 
+
+export function thong(motor: BBMotor, speed: number): void {
+        let forward = (speed >= 0);
+
+        if (speed > 1023) {
+            speed = 1023;
+        } else if (speed < -1023) {
+            speed = 1023;
+        }
+
+        let realSpeed = speed;
+        if (!forward) {
+            realSpeed = 1023 - realSpeed;
+        }
+
+        if ((motor == BBMotor.Left) || (motor == BBMotor.All)) {
+            pins.analogWritePin(AnalogPin.P0, realSpeed);
+            pins.digitalWritePin(DigitalPin.P8, forward ? 0 : 1);
+        }
+
+        if ((motor == BBMotor.Right) || (motor == BBMotor.All)) {
+            pins.analogWritePin(AnalogPin.P1, realSpeed);
+            pins.digitalWritePin(DigitalPin.P12, forward ? 0 : 1);
+        }
+    }
+
     /**
       * Sound a buzz.
       *
