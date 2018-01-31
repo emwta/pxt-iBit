@@ -46,7 +46,7 @@ enum BBPingUnit {
 /**
  * Custom blocks
  */
-//% weight=10 color=#54ceb8 icon="\uf0fb"
+//% weight=20 color=#54ceb8 icon="\uf0fb"
 namespace iBit {
 
     let neoStrip: neopixel.Strip;
