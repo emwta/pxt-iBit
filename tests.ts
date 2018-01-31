@@ -12,6 +12,20 @@
   bitbot.motor(BBMotor.Right, -1023);
   basic.pause(100);
 
+
+  bitbot.thong(BBMotor.All, 1023);
+  basic.pause(100);
+
+  // Drive 100 ms reverse
+  bitbot.thong(BBMotor.All, -1023);
+  basic.pause(100);
+
+  // Drive 100 ms forward on left and reverse on right
+  bitbot.thong(BBMotor.Left, 1023);
+  bitbot.thong(BBMotor.Right, -1023);
+  basic.pause(100);
+
+
   // Buzz for 100 ms
   bitbot.buzz(1);
   basic.pause(100);
