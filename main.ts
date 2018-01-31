@@ -233,7 +233,9 @@ export function thong(motor: BBMotor, speed: number): void {
     export function neoRotate(): void {
         neo().rotate(1);
     }
-
+export function thongBrightness(brightness: number): void {
+        neo().setBrigthness(brightness);
+    }
     /**
      * Set the brightness of the strip.
      *
