@@ -241,9 +241,9 @@ export function thong(motor: BBMotor, speed: number): void {
      */
     //% blockId="bitbot_neo_brightness" block="set led brightness %brightness"
     //% weight=10
-    export function neoBrightness(brightness: number): void {
+  /*  export function neoBrightness(brightness: number): void {
         neo().setBrigthness(brightness);
-    }
+    }*/
 
     /**
     * Read distance from sonar module connected to accessory connector.
@@ -252,7 +252,7 @@ export function thong(motor: BBMotor, speed: number): void {
     */
     //% blockId="bitbot_sonar" block="read sonar as %unit"
     //% weight=7
-    export function sonar(unit: BBPingUnit): number {
+    /*export function sonar(unit: BBPingUnit): number {
         // send pulse
         let trig = DigitalPin.P15;
         let echo = DigitalPin.P15;
@@ -274,5 +274,5 @@ export function thong(motor: BBMotor, speed: number): void {
             case BBPingUnit.Inches: return d / 148;
             default: return d;
         }
-    }
+    }*/
 }
