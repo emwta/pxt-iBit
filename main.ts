@@ -78,12 +78,12 @@ namespace IBIT {
     /**
       * Drive motor(s) forward or reverse.
       *
-      * @param motor motor to drive.
+      * @param motor1 motor to drive.
       * @param speed speed of motor
       */
     //% blockId="bitbot_motor" block="drive motor %motor|speed %speed"
     //% weight=100
-    export function motor(motor: BBMotor, speed: number): void {
+    export function motor1(motor: BBMotor, speed: number): void {
         let forward = (speed >= 0);
 
         if (speed > 1023) {
@@ -110,10 +110,10 @@ namespace IBIT {
  /**
       * Drive motor(s) forward or reverse.
       *
-      * @param MoveMotor motor to drive.
+      * @param Motor motor to drive.
       * @param speed speed of motor
       */
-    //% blockId="ibit_motorMove" block="MotorMove %motor|speed %speed"
+    //% blockId="ibit_motorMove" block="Motor %motor|speed %speed"
     //% weight=100
 export function Motor(motor: Motor, speed: number): void {
        
