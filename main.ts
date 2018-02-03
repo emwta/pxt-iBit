@@ -57,7 +57,7 @@ enum BBPingUnit {
  * Custom blocks
  */
 //% weight=20 color=#54ceb8 icon="\uf0fb"
-namespace iBit {
+namespace IBIT {
 
     let neoStrip: neopixel.Strip;
 
@@ -113,7 +113,7 @@ namespace iBit {
       * @param motor motor to drive.
       * @param speed speed of motor
       */
-    //% blockId="ibit_motorMove" block="drive motor %motor|speed %speed"
+    //% blockId="ibit_motorMove" block="MotorMove %motor|speed %speed"
     //% weight=100
 export function MotorMove(motor: MoveMotor, speed: number): void {
         let forward = (speed >= 0);
