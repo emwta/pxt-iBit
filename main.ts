@@ -17,7 +17,7 @@ enum BBMotor {
 enum MoveMotor {
     //% block="Forward"
     Forward,
-    //% block="right"
+    //% block="Backward"
     Backward
 }
 
