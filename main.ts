@@ -87,7 +87,7 @@ namespace IBIT {
       * @param Motor motor to drive.
       * @param speed speed of motor
       */
-    //% blockId="ibit_Motor" block="motor robot %motor|speed %speed"
+    //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
     //% weight=100
     export function Motor(Motor: motor, speed: number): void {       
         if (Motor == motor.Forward) {
@@ -110,7 +110,7 @@ namespace IBIT {
       * @param Turn motor to drive.
       * @param speed speed of Turn
       */
-    //% blockId="ibit_Turn" block="turn robot %motor|speed %speed"
+    //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
     //% weight=90
     export function Turn(Turn: turn, speed: number): void {       
        if (Turn == turn.Left) {
@@ -133,7 +133,7 @@ namespace IBIT {
       * @param Spin motor to drive.
       * @param speed speed of Spin
       */
-    //% blockId="ibit_Spin" block="spin robot %motor|speed %speed"
+    //% blockId="ibit_Spin" block="Spin %motor|speed %speed"
     //% weight=95
     export function Spin(Spin: spin, speed: number): void {       
         if (Spin == spin.Left) {
