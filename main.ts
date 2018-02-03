@@ -111,7 +111,7 @@ namespace IBIT {
       * @param speed speed of Turn
       */
     //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
-    //% weight=90
+    //% weight=99
     export function Turn(Turn: turn, speed: number): void {       
        if (Turn == turn.Left) {
             pins.digitalWritePin(DigitalPin.P13, 1)
@@ -134,7 +134,7 @@ namespace IBIT {
       * @param speed speed of Spin
       */
     //% blockId="ibit_Spin" block="Spin %motor|speed %speed"
-    //% weight=95
+    //% weight=98
     export function Spin(Spin: spin, speed: number): void {       
         if (Spin == spin.Left) {
             pins.digitalWritePin(DigitalPin.P13, 0)
