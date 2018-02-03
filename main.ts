@@ -22,7 +22,7 @@ enum Motor {
 }
 
 /**
-  * Enumeration of TurnMotor.
+  * Enumeration of SpinMotor.
   */
   enum Spin {
     //% block="Left"
