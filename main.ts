@@ -7,15 +7,28 @@ enum Motor {
     //% block="Forward"
     Forward,
     //% block="Backward"
-    Backward,
-    //% block="TurnLeft"
-    TurnLeft,
-    //% block="TurnRight"
-    TurnRight,
-    //% block="SpinLeft"
-    SpinLeft,
-    //% block="SpinRight"
-    SpinRight
+    Backward
+}
+
+
+/**
+  * Enumeration of TurnMotor.
+  */
+  enum Turn {
+    //% block="Left"
+    Left,
+    //% block="Right"
+    Right
+}
+
+/**
+  * Enumeration of TurnMotor.
+  */
+  enum Spin {
+    //% block="Left"
+    Left,
+    //% block="Right"
+    Right
 }
 
 /**
@@ -104,9 +117,9 @@ export function Motor(motor: Motor, speed: number): void {
       * @param Motor motor to drive.
       * @param speed speed of motor
       */
-    //% blockId="ibit_Turn" block="Motor %motor|speed %speed"
+    //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
     //% weight=100
-export function Turn(motor: Motor, speed: number): void {
+export function Turn(motor: Turn, speed: number): void {
        
     if (motor == Motor.TurnLeft) {
        pins.digitalWritePin(DigitalPin.P13, 1)
@@ -129,9 +142,9 @@ export function Turn(motor: Motor, speed: number): void {
       * @param Motor motor to drive.
       * @param speed speed of motor
       */
-    //% blockId="ibit_Spin" block="Motor %motor|speed %speed"
+    //% blockId="ibit_Spin" block="Spin %motor|speed %speed"
     //% weight=100
-    export function Spin(motor: Motor, speed: number): void {
+    export function Spin(motor: Spin, speed: number): void {
        
         if (motor == Motor.SpinLeft) {
            pins.digitalWritePin(DigitalPin.P13, 1)
