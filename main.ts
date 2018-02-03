@@ -7,7 +7,15 @@ enum Motor {
     //% block="Forward"
     Forward,
     //% block="Backward"
-    Backward
+    Backward,
+    //% block="TurnLeft"
+    TurnLeft,
+    //% block="TurnRight"
+    TurnRight,
+    //% block="SpinLeft"
+    SpinLeft,
+    //% block="SpinRight"
+    SpinRight
 }
 
 /**
@@ -71,7 +79,7 @@ namespace IBIT {
       * @param Motor motor to drive.
       * @param speed speed of motor
       */
-    //% blockId="ibit_motorMove" block="Motor %motor|speed %speed"
+    //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
     //% weight=100
 export function Motor(motor: Motor, speed: number): void {
        
@@ -90,6 +98,55 @@ export function Motor(motor: Motor, speed: number): void {
         }
     }
 
+     /**
+      * Drive motor(s) forward or reverse.
+      *
+      * @param Motor motor to drive.
+      * @param speed speed of motor
+      */
+    //% blockId="ibit_Turn" block="Motor %motor|speed %speed"
+    //% weight=100
+export function Turn(motor: Motor, speed: number): void {
+       
+    if (motor == Motor.TurnLeft) {
+       pins.digitalWritePin(DigitalPin.P13, 1)
+       pins.analogWritePin(AnalogPin.P14, speed)
+       pins.digitalWritePin(DigitalPin.P15, 0)
+       pins.analogWritePin(AnalogPin.P16, speed)
+    }
+
+    if (motor == Motor.TurnRight) {
+       pins.digitalWritePin(DigitalPin.P13, 0)
+       pins.analogWritePin(AnalogPin.P14, speed)
+       pins.digitalWritePin(DigitalPin.P15, 1)
+       pins.analogWritePin(AnalogPin.P16, speed)
+    }
+}
+
+ /**
+      * Drive motor(s) forward or reverse.
+      *
+      * @param Motor motor to drive.
+      * @param speed speed of motor
+      */
+    //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
+    //% weight=100
+    export function Spin(motor: Motor, speed: number): void {
+       
+        if (motor == Motor.SpinLeft) {
+           pins.digitalWritePin(DigitalPin.P13, 1)
+           pins.analogWritePin(AnalogPin.P14, speed)
+           pins.digitalWritePin(DigitalPin.P15, 0)
+           pins.analogWritePin(AnalogPin.P16, speed)
+        }
+
+        if (motor == Motor.TurnRight) {
+           pins.digitalWritePin(DigitalPin.P13, 0)
+           pins.analogWritePin(AnalogPin.P14, speed)
+           pins.digitalWritePin(DigitalPin.P15, 1)
+           pins.analogWritePin(AnalogPin.P16, speed)
+        }
+    }
     /**
       * Sound a buzz.
       *
