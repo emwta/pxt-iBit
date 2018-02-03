@@ -108,7 +108,7 @@ namespace IBIT {
       * Drive motor(s) forward or reverse.
       *
       * @param Turn motor to drive.
-      * @param speed speed of motor
+      * @param speed speed of Turn
       */
     //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
     //% weight=90
@@ -131,7 +131,7 @@ namespace IBIT {
       * Drive motor(s) forward or reverse.
       *
       * @param Spin motor to drive.
-      * @param speed speed of motor
+      * @param speed speed of Spin
       */
     //% blockId="ibit_Spin" block="Spin %motor|speed %speed"
     //% weight=95
