@@ -129,7 +129,7 @@ export function Turn(motor: Motor, speed: number): void {
       * @param Motor motor to drive.
       * @param speed speed of motor
       */
-    //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
+    //% blockId="ibit_Spin" block="Motor %motor|speed %speed"
     //% weight=100
     export function Spin(motor: Motor, speed: number): void {
        
