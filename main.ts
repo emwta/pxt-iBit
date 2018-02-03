@@ -79,7 +79,7 @@ namespace IBIT {
       *
       * @param motor motor to drive.
       * @param speed speed of motor
-      */
+      
     //% blockId="bitbot_motor" block="drive motor %motor|speed %speed"
     //% weight=100
     export function motor(motor: BBMotor, speed: number): void {
@@ -105,7 +105,7 @@ namespace IBIT {
             pins.analogWritePin(AnalogPin.P1, realSpeed);
             pins.digitalWritePin(DigitalPin.P12, forward ? 0 : 1);
         }
-    }
+    }*/
 
  /**
       * Drive motor(s) forward or reverse.
@@ -115,7 +115,7 @@ namespace IBIT {
       */
     //% blockId="ibit_motorMove" block="MotorMove %motor|speed %speed"
     //% weight=100
-export function MotorMove(motor: MoveMotor, speed: number): void {
+export function Motor(motor: MoveMotor, speed: number): void {
        
         if (motor == MoveMotor.Forward) {
            pins.digitalWritePin(DigitalPin.P13, 1)
