@@ -2,7 +2,7 @@
 /**
   * Enumeration of motors.
   */
-enum BBMotor {
+  enum BBMotor {
     //% block="left"
     Left,
     //% block="right"
@@ -14,7 +14,7 @@ enum BBMotor {
 /**
   * Enumeration of MoveMotor.
   */
-enum MoveMotor {
+enum Motor {
     //% block="Forward"
     Forward,
     //% block="Backward"
@@ -115,16 +115,16 @@ namespace IBIT {
       */
     //% blockId="ibit_motorMove" block="MotorMove %motor|speed %speed"
     //% weight=100
-export function Motor(motor: MoveMotor, speed: number): void {
+export function Motor(motor: Motor, speed: number): void {
        
-        if (motor == MoveMotor.Forward) {
+        if (motor == Motor.Forward) {
            pins.digitalWritePin(DigitalPin.P13, 1)
            pins.analogWritePin(AnalogPin.P14, speed)
            pins.digitalWritePin(DigitalPin.P15, 0)
            pins.analogWritePin(AnalogPin.P16, speed)
         }
 
-        if (motor == MoveMotor.Backward) {
+        if (motor == Motor.Backward) {
            pins.digitalWritePin(DigitalPin.P13, 0)
            pins.analogWritePin(AnalogPin.P14, speed)
            pins.digitalWritePin(DigitalPin.P15, 1)
