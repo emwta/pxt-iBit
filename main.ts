@@ -18,7 +18,7 @@ enum MoveMotor {
     //% block="Forward"
     Forward,
     //% block="right"
-    Backward,
+    Backward
 }
 
 /**
@@ -116,7 +116,7 @@ namespace IBIT {
     //% blockId="ibit_motorMove" block="MotorMove %motor|speed %speed"
     //% weight=100
 export function MotorMove(motor: MoveMotor, speed: number): void {
-        let forward = (speed >= 0);
+        /*let forward = (speed >= 0);
 
         if (speed > 1023) {
             speed = 1023;
@@ -127,16 +127,20 @@ export function MotorMove(motor: MoveMotor, speed: number): void {
         let realSpeed = speed;
         if (!forward) {
             realSpeed = 1023 - realSpeed;
-        }
+        }*/
 
         if (motor == MoveMotor.Forward) {
-            pins.analogWritePin(AnalogPin.P0, realSpeed);
-            pins.digitalWritePin(DigitalPin.P8, forward ? 0 : 1);
+           pins.digitalWritePin(DigitalPin.P13, 1)
+           pins.analogWritePin(AnalogPin.P14, speed)
+           pins.digitalWritePin(DigitalPin.P15, 0)
+           pins.analogWritePin(AnalogPin.P16, speed)
         }
 
         if (motor == MoveMotor.Backward) {
-            pins.analogWritePin(AnalogPin.P1, realSpeed);
-            pins.digitalWritePin(DigitalPin.P12, forward ? 0 : 1);
+           pins.digitalWritePin(DigitalPin.P13, 0)
+           pins.analogWritePin(AnalogPin.P14, speed)
+           pins.digitalWritePin(DigitalPin.P15, 1)
+           pins.analogWritePin(AnalogPin.P16, speed)
         }
     }
 
