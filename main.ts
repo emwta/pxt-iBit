@@ -12,7 +12,7 @@ enum BBMotor {
 }
 
 /**
-  * Enumeration of motors.
+  * Enumeration of MoveMotor.
   */
 enum MoveMotor {
     //% block="Forward"
@@ -110,25 +110,13 @@ namespace IBIT {
  /**
       * Drive motor(s) forward or reverse.
       *
-      * @param motor motor to drive.
+      * @param MoveMotor motor to drive.
       * @param speed speed of motor
       */
     //% blockId="ibit_motorMove" block="MotorMove %motor|speed %speed"
     //% weight=100
 export function MotorMove(motor: MoveMotor, speed: number): void {
-        /*let forward = (speed >= 0);
-
-        if (speed > 1023) {
-            speed = 1023;
-        } else if (speed < -1023) {
-            speed = 1023;
-        }
-
-        let realSpeed = speed;
-        if (!forward) {
-            realSpeed = 1023 - realSpeed;
-        }*/
-
+       
         if (motor == MoveMotor.Forward) {
            pins.digitalWritePin(DigitalPin.P13, 1)
            pins.analogWritePin(AnalogPin.P14, speed)
