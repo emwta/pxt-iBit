@@ -82,7 +82,7 @@ namespace IBIT {
     }
    
     /**
-      * Drive motor(s) forward or reverse.
+      * Drive motor(s) Forward or Backward.
       *
       * @param Motor motor to drive.
       * @param speed speed of motor
@@ -105,12 +105,12 @@ namespace IBIT {
     }
 
      /**
-      * Drive motor(s) forward or reverse.
+      * Drive motor(s) TurnLeft or TurnRight .
       *
       * @param Turn motor to drive.
       * @param speed speed of Turn
       */
-    //% blockId="ibit_Turn" block="Motor %motor|speed %speed"
+    //% blockId="ibit_Turn" block="turn %motor|speed %speed"
     //% weight=90
     export function Turn(Turn: turn, speed: number): void {       
        if (Turn == turn.Left) {
@@ -128,12 +128,12 @@ namespace IBIT {
     }
 
     /**
-      * Drive motor(s) forward or reverse.
+      * Drive motor(s) SpinLeft or SpinRight.
       *
       * @param Spin motor to drive.
       * @param speed speed of Spin
       */
-    //% blockId="ibit_Spin" block="Motor %motor|speed %speed"
+    //% blockId="ibit_Spin" block="spin %motor|speed %speed"
     //% weight=95
     export function Spin(Spin: spin, speed: number): void {       
         if (Spin == spin.Left) {
@@ -260,7 +260,7 @@ namespace IBIT {
     export function neoRotate(): void {
         neo().rotate(1);
     }
-export function thongBrightness(brightness: number): void {
+    export function thongBrightness(brightness: number): void {
         neo().setBrigthness(brightness);
     }
     /**
@@ -270,9 +270,9 @@ export function thongBrightness(brightness: number): void {
      */
     //% blockId="bitbot_neo_brightness" block="set led brightness %brightness"
     //% weight=10
-  /*  export function neoBrightness(brightness: number): void {
+    export function neoBrightness(brightness: number): void {
         neo().setBrigthness(brightness);
-    }*/
+    }
 
     /**
     * Read distance from sonar module connected to accessory connector.
@@ -281,7 +281,7 @@ export function thongBrightness(brightness: number): void {
     */
     //% blockId="bitbot_sonar" block="read sonar as %unit"
     //% weight=7
-    /*export function sonar(unit: BBPingUnit): number {
+    export function sonar(unit: BBPingUnit): number {
         // send pulse
         let trig = DigitalPin.P15;
         let echo = DigitalPin.P15;
@@ -303,5 +303,5 @@ export function thongBrightness(brightness: number): void {
             case BBPingUnit.Inches: return d / 148;
             default: return d;
         }
-    }*/
+    }
 }
