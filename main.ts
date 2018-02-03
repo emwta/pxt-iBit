@@ -1,7 +1,7 @@
 /**
   * Enumeration of Motor.
   */
-enum Motor {
+enum motor {
     //% block="Forward"
     Forward,
     //% block="Backward"
@@ -11,7 +11,7 @@ enum Motor {
 /**
   * Enumeration of TurnMotor.
   */
-enum Turn {
+enum turn {
     //% block="Left"
     Left,
     //% block="Right"
@@ -21,7 +21,7 @@ enum Turn {
 /**
   * Enumeration of SpinMotor.
   */
-enum Spin {
+enum spin {
     //% block="Left"
     Left,
     //% block="Right"
@@ -87,16 +87,16 @@ namespace IBIT {
       * @param Motor motor to drive.
       * @param speed speed of motor
       */
-    //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
+    //% blockId="ibit_Motor" block="Motor move %motor|speed %speed"
     //% weight=100
-    export function Motor(motor: Motor, speed: number): void {       
-        if (motor == Motor.Forward) {
+    export function Motor(Motor: motor, speed: number): void {       
+        if (Motor == motor.Forward) {
            pins.digitalWritePin(DigitalPin.P13, 1)
            pins.analogWritePin(AnalogPin.P14, speed)
            pins.digitalWritePin(DigitalPin.P15, 0)
            pins.analogWritePin(AnalogPin.P16, speed)
         }
-        if (motor == Motor.Backward) {
+        if (Motor == motor.Backward) {
            pins.digitalWritePin(DigitalPin.P13, 0)
            pins.analogWritePin(AnalogPin.P14, speed)
            pins.digitalWritePin(DigitalPin.P15, 1)
@@ -110,16 +110,16 @@ namespace IBIT {
       * @param Turn motor to drive.
       * @param speed speed of Turn
       */
-    //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
+    //% blockId="ibit_Turn" block="Motor Turn %motor|speed %speed"
     //% weight=90
-    export function Turn(Turn: Turn, speed: number): void {       
-       if (Turn == Turn.Left) {
+    export function Turn(Turn: turn, speed: number): void {       
+       if (Turn == turn.Left) {
             pins.digitalWritePin(DigitalPin.P13, 1)
             pins.analogWritePin(AnalogPin.P14, speed)
             pins.digitalWritePin(DigitalPin.P15, 0)
             pins.analogWritePin(AnalogPin.P16, speed)
         }
-        if (Turn == Turn.Right) {
+        if (Turn == turn.Right) {
             pins.digitalWritePin(DigitalPin.P13, 0)
             pins.analogWritePin(AnalogPin.P14, speed)
             pins.digitalWritePin(DigitalPin.P15, 1)
@@ -133,16 +133,16 @@ namespace IBIT {
       * @param Spin motor to drive.
       * @param speed speed of Spin
       */
-    //% blockId="ibit_Spin" block="Spin %motor|speed %speed"
+    //% blockId="ibit_Spin" block="Motor Spin %motor|speed %speed"
     //% weight=95
-    export function Spin(Spin: Spin, speed: number): void {       
-        if (Spin == Spin.Left) {
+    export function Spin(Spin: spin, speed: number): void {       
+        if (Spin == spin.Left) {
             pins.digitalWritePin(DigitalPin.P13, 0)
             pins.analogWritePin(AnalogPin.P14, speed)
             pins.digitalWritePin(DigitalPin.P15, 0)
             pins.analogWritePin(AnalogPin.P16, speed)
         }
-        if (Spin == Spin.Right) {
+        if (Spin == spin.Right) {
             pins.digitalWritePin(DigitalPin.P13, 1)
             pins.analogWritePin(AnalogPin.P14, speed)
             pins.digitalWritePin(DigitalPin.P15, 1)
