@@ -12,6 +12,16 @@ enum BBMotor {
 }
 
 /**
+  * Enumeration of motors.
+  */
+  enum MotorMove {
+    //% block="Forward"
+    Forward,
+    //% block="right"
+    Backward,
+}
+
+/**
   * Enumeration of line sensors.
   */
 enum BBLineSensor {
@@ -97,8 +107,15 @@ namespace iBit {
         }
     }
 
-
-export function thong(motor: BBMotor, speed: number): void {
+ /**
+      * Drive motor(s) forward or reverse.
+      *
+      * @param motor motor to drive.
+      * @param speed speed of motor
+      */
+    //% blockId="ibit_motorMove" block="drive motor %motor|speed %speed"
+    //% weight=100
+export function MotorMove(motor: MotorMove, speed: number): void {
         let forward = (speed >= 0);
 
         if (speed > 1023) {
@@ -112,12 +129,12 @@ export function thong(motor: BBMotor, speed: number): void {
             realSpeed = 1023 - realSpeed;
         }
 
-        if ((motor == BBMotor.Left) || (motor == BBMotor.All)) {
+        if (motor == BBMotor.Left) {
             pins.analogWritePin(AnalogPin.P0, realSpeed);
             pins.digitalWritePin(DigitalPin.P8, forward ? 0 : 1);
         }
 
-        if ((motor == BBMotor.Right) || (motor == BBMotor.All)) {
+        if (motor == BBMotor.Right) {
             pins.analogWritePin(AnalogPin.P1, realSpeed);
             pins.digitalWritePin(DigitalPin.P12, forward ? 0 : 1);
         }
