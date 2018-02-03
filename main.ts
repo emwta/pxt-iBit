@@ -1,5 +1,3 @@
-
-
 /**
   * Enumeration of Motor.
   */
@@ -10,11 +8,10 @@ enum Motor {
     Backward
 }
 
-
 /**
   * Enumeration of TurnMotor.
   */
-  enum Turn {
+enum Turn {
     //% block="Left"
     Left,
     //% block="Right"
@@ -24,7 +21,7 @@ enum Motor {
 /**
   * Enumeration of SpinMotor.
   */
-  enum Spin {
+enum Spin {
     //% block="Left"
     Left,
     //% block="Right"
@@ -83,8 +80,6 @@ namespace IBIT {
 
         return neoStrip;
     }
-
-
    
  /**
       * Drive motor(s) forward or reverse.
@@ -118,7 +113,7 @@ export function Motor(motor: Motor, speed: number): void {
       * @param speed speed of motor
       */
     //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
-    //% weight=100
+    //% weight=90
 export function Turn(Turn: Turn, speed: number): void {
        
     if (Turn == Turn.Left) {
@@ -143,23 +138,24 @@ export function Turn(Turn: Turn, speed: number): void {
       * @param speed speed of motor
       */
     //% blockId="ibit_Spin" block="Spin %motor|speed %speed"
-    //% weight=100
+    //% weight=95
     export function Spin(Spin: Spin, speed: number): void {
        
         if (Spin == Spin.Left) {
-           pins.digitalWritePin(DigitalPin.P13, 1)
-           pins.analogWritePin(AnalogPin.P14, speed)
-           pins.digitalWritePin(DigitalPin.P15, 0)
-           pins.analogWritePin(AnalogPin.P16, speed)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.analogWritePin(AnalogPin.P14, speed)
+        pins.digitalWritePin(DigitalPin.P15, 0)
+        pins.analogWritePin(AnalogPin.P16, speed)
         }
 
         if (Spin == Spin.Right) {
-           pins.digitalWritePin(DigitalPin.P13, 0)
-           pins.analogWritePin(AnalogPin.P14, speed)
-           pins.digitalWritePin(DigitalPin.P15, 1)
-           pins.analogWritePin(AnalogPin.P16, speed)
+        pins.digitalWritePin(DigitalPin.P13, 1)
+        pins.analogWritePin(AnalogPin.P14, speed)
+        pins.digitalWritePin(DigitalPin.P15, 1)
+        pins.analogWritePin(AnalogPin.P16, speed)
         }
     }
+
     /**
       * Sound a buzz.
       *
