@@ -121,14 +121,14 @@ export function Motor(motor: Motor, speed: number): void {
     //% weight=100
 export function Turn(motor: Turn, speed: number): void {
        
-    if (motor == Motor.TurnLeft) {
+    if (motor == Turn.Left) {
        pins.digitalWritePin(DigitalPin.P13, 1)
        pins.analogWritePin(AnalogPin.P14, speed)
        pins.digitalWritePin(DigitalPin.P15, 0)
        pins.analogWritePin(AnalogPin.P16, speed)
     }
 
-    if (motor == Motor.TurnRight) {
+    if (motor == Turn.Right) {
        pins.digitalWritePin(DigitalPin.P13, 0)
        pins.analogWritePin(AnalogPin.P14, speed)
        pins.digitalWritePin(DigitalPin.P15, 1)
@@ -146,14 +146,14 @@ export function Turn(motor: Turn, speed: number): void {
     //% weight=100
     export function Spin(motor: Spin, speed: number): void {
        
-        if (motor == Motor.SpinLeft) {
+        if (motor == Spin.Left) {
            pins.digitalWritePin(DigitalPin.P13, 1)
            pins.analogWritePin(AnalogPin.P14, speed)
            pins.digitalWritePin(DigitalPin.P15, 0)
            pins.analogWritePin(AnalogPin.P16, speed)
         }
 
-        if (motor == Motor.TurnRight) {
+        if (motor == Spin.Right) {
            pins.digitalWritePin(DigitalPin.P13, 0)
            pins.analogWritePin(AnalogPin.P14, speed)
            pins.digitalWritePin(DigitalPin.P15, 1)
