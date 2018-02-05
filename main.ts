@@ -186,7 +186,7 @@ namespace IBIT {
       */
     //% blockId="bitbot_read_light" block="read light sensor %sensor"
     //% weight=90
-    export function readLight(sensor: BBLightSensor): number {
+    /*export function readLight(sensor: BBLightSensor): number {
         if (sensor == BBLightSensor.Left) {
             pins.digitalWritePin(DigitalPin.P16, 0);
             return pins.analogReadPin(AnalogPin.P2);
@@ -194,7 +194,7 @@ namespace IBIT {
             pins.digitalWritePin(DigitalPin.P16, 1);
             return pins.analogReadPin(AnalogPin.P2);
         }
-    }
+    }*/
 
     /**
       * Shows all LEDs to a given color (range 0-255 for r, g, b).
@@ -203,7 +203,7 @@ namespace IBIT {
       */
     //% blockId="bitbot_neo_set_color" block="set pixels to %rgb=neopixel_colors"
     //% weight=80
-    export function neoSetColor(rgb: number) {
+    /*export function neoSetColor(rgb: number) {
         neo().showColor(rgb);
     }
 
@@ -215,57 +215,57 @@ namespace IBIT {
      */
     //% blockId="bitbot_neo_set_pixel_color" block="set pixel color at %offset|to %rgb=neopixel_colors"
     //% weight=80
-    export function neoSetPixelColor(offset: number, rgb: number): void {
+    /*export function neoSetPixelColor(offset: number, rgb: number): void {
         neo().setPixelColor(offset, rgb);
-    }
+    }*/
 
     /**
       * Show leds.
       */
     //% blockId="bitbot_neo_show" block="show leds"
     //% weight=76
-    export function neoShow(): void {
+    /*export function neoShow(): void {
         neo().show();
-    }
+    }*/
 
     /**
       * Clear leds.
       */
     //% blockId="bitbot_neo_clear" block="clear leds"
     //% weight=75
-    export function neoClear(): void {
+   /* export function neoClear(): void {
         neo().clear();
-    }
+    }*/
 
     /**
       * Shows a rainbow pattern on all LEDs.
       */
     //% blockId="bitbot_neo_rainbow" block="set led rainbow"
     //% weight=70
-    export function neoRainbow(): void {
+   /* export function neoRainbow(): void {
         neo().showRainbow(1, 360);
-    }
+    }*/
 
     /**
      * Shift LEDs forward and clear with zeros.
      */
     //% blockId="bitbot_neo_shift" block="shift led pixels"
     //% weight=66
-    export function neoShift(): void {
+   /* export function neoShift(): void {
         neo().shift(1);
-    }
+    }*/
 
     /**
      * Rotate LEDs forward.
      */
     //% blockId="bitbot_neo_rotate" block="rotate led pixels"
     //% weight=65
-    export function neoRotate(): void {
+   /* export function neoRotate(): void {
         neo().rotate(1);
     }
     export function thongBrightness(brightness: number): void {
         neo().setBrigthness(brightness);
-    }
+    }*/
     /**
      * Set the brightness of the strip.
      *
@@ -273,9 +273,9 @@ namespace IBIT {
      */
     //% blockId="bitbot_neo_brightness" block="set led brightness %brightness"
     //% weight=10
-    export function neoBrightness(brightness: number): void {
+    /*export function neoBrightness(brightness: number): void {
         neo().setBrigthness(brightness);
-    }
+    }*/
 
     /**
     * Read distance from sonar module connected to accessory connector.
@@ -284,7 +284,7 @@ namespace IBIT {
     */
     //% blockId="bitbot_sonar" block="read sonar as %unit"
     //% weight=7
-    export function sonar(unit: BBPingUnit): number {
+    /*export function sonar(unit: BBPingUnit): number {
         // send pulse
         let trig = DigitalPin.P15;
         let echo = DigitalPin.P15;
@@ -306,5 +306,5 @@ namespace IBIT {
             case BBPingUnit.Inches: return d / 148;
             default: return d;
         }
-    }
+    }*/
 }
