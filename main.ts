@@ -89,18 +89,19 @@ namespace IBIT {
       */
     //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
     //% weight=100
-    export function Motor(Motor: motor, speed: number): void {       
+    export function Motor(Motor: motor, speed: number): void {  
+        let motorspeed = pins.map(speed,0,100,0,1023)     
         if (Motor == motor.Forward) {
            pins.digitalWritePin(DigitalPin.P13, 1)
-           pins.analogWritePin(AnalogPin.P14, speed)
+           pins.analogWritePin(AnalogPin.P14, motorspeed)
            pins.digitalWritePin(DigitalPin.P15, 0)
-           pins.analogWritePin(AnalogPin.P16, speed)
+           pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
         if (Motor == motor.Backward) {
            pins.digitalWritePin(DigitalPin.P13, 0)
-           pins.analogWritePin(AnalogPin.P14, speed)
+           pins.analogWritePin(AnalogPin.P14, motorspeed)
            pins.digitalWritePin(DigitalPin.P15, 1)
-           pins.analogWritePin(AnalogPin.P16, speed)
+           pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
     }
 
@@ -113,18 +114,18 @@ namespace IBIT {
     //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
     //% weight=99
     export function Turn(Turn: turn, speed: number): void {       
-      let a = pins.map(speed,0,100,0,1023)
+      let motorspeed = pins.map(speed,0,100,0,1023)
         if (Turn == turn.Left) {           
             pins.digitalWritePin(DigitalPin.P13, 1)
-            pins.analogWritePin(AnalogPin.P14, a)
+            pins.analogWritePin(AnalogPin.P14, motorspeed)
             pins.digitalWritePin(DigitalPin.P15, 0)
-            pins.analogWritePin(AnalogPin.P16, a)
+            pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
         if (Turn == turn.Right) {
             pins.digitalWritePin(DigitalPin.P13, 0)
-            pins.analogWritePin(AnalogPin.P14, a)
+            pins.analogWritePin(AnalogPin.P14, motorspeed)
             pins.digitalWritePin(DigitalPin.P15, 1)
-            pins.analogWritePin(AnalogPin.P16, a)
+            pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
     }
 
@@ -136,19 +137,19 @@ namespace IBIT {
       */
     //% blockId="ibit_Spin" block="Spin %motor|speed %speed"
     //% weight=98
-    export function Spin(Spin: spin, speed: number): void {       
+    export function Spin(Spin: spin, speed: number): void {   
+        let motorspeed = pins.map(speed,0,100,0,1023)    
         if (Spin == spin.Left) {
-
             pins.digitalWritePin(DigitalPin.P13, 0)
-            pins.analogWritePin(AnalogPin.P14, speed)
+            pins.analogWritePin(AnalogPin.P14, motorspeed)
             pins.digitalWritePin(DigitalPin.P15, 0)
-            pins.analogWritePin(AnalogPin.P16, speed)
+            pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
         if (Spin == spin.Right) {
             pins.digitalWritePin(DigitalPin.P13, 1)
-            pins.analogWritePin(AnalogPin.P14, speed)
+            pins.analogWritePin(AnalogPin.P14, motorspeed)
             pins.digitalWritePin(DigitalPin.P15, 1)
-            pins.analogWritePin(AnalogPin.P16, speed)
+            pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
     }
 
