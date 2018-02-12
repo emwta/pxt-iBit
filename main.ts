@@ -2,9 +2,9 @@
   * Enumeration of Motor.
   */
 enum motor {
-    //% block="Forward"
+    //% block="Forward \u21c8"
     Forward,
-    //% block="Backward"
+    //% block="Backward \u21ca"
     Backward
 }
 
@@ -14,7 +14,7 @@ enum motor {
 enum turn {
     //% block="Left"
     Left,
-    //% block="Right"
+    //% block="Right \u21c8"
     Right
 }
 
