@@ -173,13 +173,13 @@ namespace IBIT {
             return ReadADC = pins.i2cReadNumber(72, NumberFormat.UInt16BE, false)      
     }
 
-    //% blockId="ibit_Servo" block="Servo %Servo %Degree"
+    //% blockId="ibit_Servo" block="Servo %Servo Degree %Degree"
     //% weight=96
     export function Servo(Servo:servo, Degree:number): void{
         if(Servo == servo.SV1){
             pins.servoWritePin(AnalogPin.P8, 180)
         }
-        else{
+        else if(Servo == servo.SV2){
             pins.servoWritePin(AnalogPin.P12, 180)
         }
 
