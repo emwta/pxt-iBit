@@ -73,6 +73,7 @@ namespace IBIT {
       * @param speed speed of motor
       */
     //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
+    //% speed.min=0 speed.max=100
     //% weight=100
     export function Motor(Motor: motor, speed: number): void {  
         let motorspeed = pins.map(speed,0,100,0,1023)     
@@ -97,6 +98,7 @@ namespace IBIT {
       * @param speed speed of Turn
       */
     //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
+    //% speed.min=0 speed.max=100
     //% weight=99
     export function Turn(Turn: turn, speed: number): void {       
       let motorspeed = pins.map(speed,0,100,0,1023)      
@@ -121,6 +123,7 @@ namespace IBIT {
       * @param speed speed of Spin
       */
     //% blockId="ibit_Spin" block="Spin %motor|speed %speed"
+    //% speed.min=0 speed.max=100
     //% weight=98
     export function Spin(Spin: spin, speed: number): void {   
         let motorspeed = pins.map(speed,0,100,0,1023)    
@@ -174,6 +177,7 @@ namespace IBIT {
     }
 
     //% blockId="ibit_Servo" block="Servo %servo|Degree %Degree"
+    //% Degree.min=0 Degree.max=180
     //% weight=96
     export function Servo(Servo:servo, Degree:number): void{
         if(Servo == servo.SV1){
