@@ -70,7 +70,7 @@ namespace IBIT {
       * Drive motor(s) Forward or Backward.
       *
       * @param Motor motor to drive.
-      * @param speed speed of motor
+      * @param speed percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
     //% speed.min=0 speed.max=100
@@ -95,7 +95,7 @@ namespace IBIT {
       * Drive motor(s) TurnLeft or TurnRight .
       *
       * @param Turn motor to drive.
-      * @param speed speed of Turn
+      * @param speed percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
     //% speed.min=0 speed.max=100
@@ -120,7 +120,7 @@ namespace IBIT {
       * Drive motor(s) SpinLeft or SpinRight.
       *
       * @param Spin motor to drive.
-      * @param speed speed of Spin
+      * @param speed percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Spin" block="Spin %motor|speed %speed"
     //% speed.min=0 speed.max=100
