@@ -50,6 +50,17 @@ enum readADC {
 }
 
 /**
+  * Enumeration of Servo.
+  */
+enum servo{
+    //% block="1"
+    SV1,
+    //% Block="2"
+    SV2
+}
+
+
+/**
  * Custom blocks
  */
 //% weight=50 color=#54ceb8 icon="\uf197"
@@ -160,5 +171,17 @@ namespace IBIT {
             false
             )
             return ReadADC = pins.i2cReadNumber(72, NumberFormat.UInt16BE, false)      
+    }
+
+    //% blockId="ibit_Servo" block="Servo %Servo %Degree"
+    //% weight=96
+    export function Servo(Servo:servo, Degree:number): void{
+        if(Servo == servo.SV1){
+            pins.servoWritePin(AnalogPin.P8, 180)
+        }
+        else{
+            pins.servoWritePin(AnalogPin.P12, 180)
+        }
+
     }
 }
