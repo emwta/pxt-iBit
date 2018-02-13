@@ -32,21 +32,21 @@ enum spin {
   */
 enum ReadADC {
     //% block="ADC0"
-    ADC0,
+    ADC0 = 132,
     //% block="ADC1"
-    ADC1,
+    ADC1 = 196,
     //% block="ADC2"
-    ADC2,
+    ADC2 = 148,
     //% block="ADC3"
-    ADC3,
+    ADC3 = 212,
     //% block="ADC4"
-    ADC4,
+    ADC4 = 164,
     //% block="ADC5"
-    ADC5,
+    ADC5 = 228,
     //% block="ADC6"
-    ADC6,
+    ADC6 = 180,
     //% block="ADC7"
-    ADC7
+    ADC7 = 244
 }
 
 /**
@@ -168,16 +168,16 @@ namespace IBIT {
     //% blockId="ibit_readADC" block="Read Channel %channel"
     //% weight=97
     export function ReadADC(ReadADC:ReadADC): number{
-        let channel_addr = [132, 196, 148, 212, 164, 228, 180, 244]
+       // let channel_addr = [132, 196, 148, 212, 164, 228, 180, 244]
         let adc = [0]
         for (let index = 0; index <= 7; index++) {
             pins.i2cWriteNumber(
             72,
-            channel_addr[index],
+            ReadADC[index],
             NumberFormat.UInt8LE,
             false
             )
-            adc[index] = pins.i2cReadNumber(72, NumberFormat.UInt16BE, false)
+            ReadADC = pins.i2cReadNumber(72, NumberFormat.UInt16BE, false)
         }
 
     }
