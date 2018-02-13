@@ -158,30 +158,6 @@ namespace IBIT {
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
     }
-    let adc: number[] = []   
-    let channel_addr: number[] = []
-/**
-      * ReadADC analog channel 0-7   
-      *    
-      * @param ReadADC ReadADC Select Analog Channel 0-7 
-      *
-      */
-    //% blockId="ibit_readADC" block="Read Channel %channel"
-    //% weight=97
-    export function ReadADC(ReadADC:readADC): number{
-        channel_addr = [132, 196, 148, 212, 164, 228, 180, 244]
-        adc = [0]
-        for (let index = 0; index <= 7; index++) {
-            pins.i2cWriteNumber(
-            72,
-            channel_addr[index],
-            NumberFormat.UInt8LE,
-            false
-            )
-            adc[index] = pins.i2cReadNumber(72, NumberFormat.UInt16BE, false)
-        }
-
-    }
    
 
 
