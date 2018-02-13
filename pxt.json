@@ -2,15 +2,13 @@
     "name": "iBit",
     "version": "1.0.0",
     "description": "A iBit package for pxt-microbit",
-    "license": "Apache",
+    "license": "MIT",
     "dependencies": {
-        "core": "*",
-        "neopixel": "github:microsoft/pxt-neopixel#v0.3.4"
+        "core": "*"        
     },
     "files": [
         "README.md",
-        "main.ts",
-        "_locales/no/bitbot-strings.json"
+        "iBit.ts"        
     ],
     "testFiles": [
         "tests.ts"
