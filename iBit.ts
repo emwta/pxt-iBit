@@ -63,7 +63,7 @@ enum servo{
 /**
  * Custom blocks
  */
-//% weight=50 color=#54ceb8 icon="\uf135"
+//% weight=50 color=#54ceb8 icon="\u1f680"
 namespace IBIT {
       
     /**
