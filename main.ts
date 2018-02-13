@@ -12,9 +12,9 @@ enum motor {
   * Enumeration of TurnMotor.
   */
 enum turn {
-    //% block="Left"
+    //% block="Left \u27f5"
     Left,
-    //% block="Right \u21c8"
+    //% block="Right \u27f6"
     Right
 }
 
@@ -22,9 +22,9 @@ enum turn {
   * Enumeration of SpinMotor.
   */
 enum spin {
-    //% block="Left"
+    //% block="Left \u21f5"
     Left,
-    //% block="Right"
+    //% block="Right \u21c8"
     Right
 }
 /**
