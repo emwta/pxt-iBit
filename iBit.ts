@@ -56,7 +56,7 @@ enum servo{
     //% block="1"
     SV1,
     //% Block="2"
-    SV23
+    SV2
 }
 
 
