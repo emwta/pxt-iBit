@@ -24,7 +24,7 @@ enum turn {
 enum spin {
     //% block="Left \u21f5"
     Left,
-    //% block="Right \u21c8"
+    //% block="Right \u21c5"
     Right
 }
 /**
