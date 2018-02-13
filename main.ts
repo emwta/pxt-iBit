@@ -30,7 +30,7 @@ enum spin {
 /**
   * Enumeration of ReadADC.
   */
-enum ReadADC {
+enum readADC {
     //% block="ADC0"
     ADC0 = 132,
     //% block="ADC1"
@@ -123,7 +123,7 @@ namespace IBIT {
       let motorspeed = pins.map(speed,0,100,0,1023)
         if (Turn == turn.Left) {           
             pins.digitalWritePin(DigitalPin.P13, 1)
-            pins.analogWritePin(AnalogPin.P14, motorspeed)
+            pins.analogWritePin(AnalogPin.P14, motorspeed/2)
             pins.digitalWritePin(DigitalPin.P15, 0)
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
@@ -131,7 +131,7 @@ namespace IBIT {
             pins.digitalWritePin(DigitalPin.P13, 0)
             pins.analogWritePin(AnalogPin.P14, motorspeed)
             pins.digitalWritePin(DigitalPin.P15, 1)
-            pins.analogWritePin(AnalogPin.P16, motorspeed)
+            pins.analogWritePin(AnalogPin.P16, motorspeed/2)
         }
     }
 
@@ -158,7 +158,8 @@ namespace IBIT {
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
     }
-
+    let adc: number[] = []   
+    let channel_addr: number[] = []
 /**
       * ReadADC analog channel 0-7   
       *    
@@ -167,21 +168,22 @@ namespace IBIT {
       */
     //% blockId="ibit_readADC" block="Read Channel %channel"
     //% weight=97
-    export function ReadADC(ReadADC:ReadADC): number{
-       // let channel_addr = [132, 196, 148, 212, 164, 228, 180, 244]
-        let adc = [0]
+    export function ReadADC(ReadADC:readADC): number{
+        channel_addr = [132, 196, 148, 212, 164, 228, 180, 244]
+        adc = [0]
         for (let index = 0; index <= 7; index++) {
             pins.i2cWriteNumber(
             72,
-            ReadADC[index],
+            channel_addr[index],
             NumberFormat.UInt8LE,
             false
             )
-            ReadADC = pins.i2cReadNumber(72, NumberFormat.UInt16BE, false)
+            adc[index] = pins.i2cReadNumber(72, NumberFormat.UInt16BE, false)
         }
 
     }
 
+   
 
 
 
