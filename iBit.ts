@@ -175,7 +175,9 @@ namespace IBIT {
             )
             return ReadADC = pins.i2cReadNumber(72, NumberFormat.UInt16BE, false)      
     }
-
+    /**
+     * @param Degree servo degree 0-180, eg: 180
+     */
     //% blockId="ibit_Servo" block="Servo %servo|Degree %Degree"
     //% Degree.min=0 Degree.max=180
     //% weight=96
