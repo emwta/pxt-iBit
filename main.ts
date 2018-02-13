@@ -84,7 +84,7 @@ enum BBPingUnit {
 /**
  * Custom blocks
  */
-//% weight=50 color=#54ceb8 icon="\uf135"
+//% weight=50 color=#54ceb8 icon="\uf197"
 namespace IBIT {
       
     /**
