@@ -1,6 +1,6 @@
 {
   "name": "pxt-iBit",
-  "version": "1.0.0",
+  "version": "1.2.10",
   "dependencies": {},
   "devDependencies": {
     "pxt": "^0.3.0",
