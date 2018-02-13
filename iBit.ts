@@ -179,7 +179,7 @@ namespace IBIT {
         if(Servo == servo.SV1){
             pins.servoWritePin(AnalogPin.P8, Degree)
         }
-        if(Servo == servo.SV23){
+        if(Servo == servo.SV2){
             pins.servoWritePin(AnalogPin.P12, Degree)
         }
 
