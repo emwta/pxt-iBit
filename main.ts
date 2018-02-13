@@ -31,21 +31,21 @@ enum spin {
   * Enumeration of ReadADC.
   */
 enum ReadADC {
-    //% block="0"
+    //% block="ADC0"
     ADC0,
-    //% block="1"
+    //% block="ADC1"
     ADC1,
-    //% block="2"
+    //% block="ADC2"
     ADC2,
-    //% block="3"
+    //% block="ADC3"
     ADC3,
-    //% block="4"
+    //% block="ADC4"
     ADC4,
-    //% block="5"
+    //% block="ADC5"
     ADC5,
-    //% block="6"
+    //% block="ADC6"
     ADC6,
-    //% block="7"
+    //% block="ADC7"
     ADC7
 }
 
@@ -165,9 +165,9 @@ namespace IBIT {
       * @param ReadADC ReadADC Select Analog Channel 0-7 
       *
       */
-    //% blockId="ibit_readADC" block="ReadADC Channel %channel"
+    //% blockId="ibit_readADC" block="Read Channel %channel"
     //% weight=97
-    export function ReadADC(readADC:ReadADC): number{
+    export function ReadADC(ReadADC:ReadADC): void{
         let channel_addr = [132, 196, 148, 212, 164, 228, 180, 244]
         let adc = [0]
         for (let index = 0; index <= 7; index++) {
