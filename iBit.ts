@@ -53,9 +53,9 @@ enum readADC {
   * Enumeration of Servo.
   */
 enum servo{
-    //% block="SV1"
+    //% block="SV 1"
     SV1,
-    //% Block="SV2"
+    //% Block="SV 2"
     SV2
 }
 
@@ -160,7 +160,7 @@ namespace IBIT {
       *
       */
     //% blockId="ibit_readADC" block="Read %readADC"
-    //% weight=96
+    //% weight=95
     export function ReadADC(ReadADC:readADC): number{ 
             let ADCValue:number;
 
