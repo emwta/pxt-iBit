@@ -93,7 +93,7 @@ namespace IBIT {
       * @param Motor motor to drive.
       * @param speed speed of motor
       */
-    //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
+    //% blockId="ibit_Motor" block="Motor %motor|speed %speed 50"
     //% weight=100
     export function Motor(Motor: motor, speed: number): void {  
         let motorspeed = pins.map(speed,0,100,0,1023)     
@@ -117,7 +117,7 @@ namespace IBIT {
       * @param Turn motor to drive.
       * @param speed speed of Turn
       */
-    //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
+    //% blockId="ibit_Turn" block="Turn %motor|speed %speed 50"
     //% weight=99
     export function Turn(Turn: turn, speed: number): void {       
       let motorspeed = pins.map(speed,0,100,0,1023)      
@@ -141,7 +141,7 @@ namespace IBIT {
       * @param Spin motor to drive.
       * @param speed speed of Spin
       */
-    //% blockId="ibit_Spin" block="Spin %motor|speed %speed"
+    //% blockId="ibit_Spin" block="Spin %motor|speed %speed 50"
     //% weight=98
     export function Spin(Spin: spin, speed: number): void {   
         let motorspeed = pins.map(speed,0,100,0,1023)    
@@ -164,16 +164,16 @@ namespace IBIT {
       * @param  MotorStop  motor all stop
       * 
       */
-    //% blockId="ibit_MotorStop" block="MotorStop"
+    //% blockId="ibit_MotorStop" block="Motor Stop"
     //% weight=97
-    export function MotorStop():void{
+    export function Motor_Stop():void{
         pins.digitalWritePin(DigitalPin.P13, 1)
         pins.analogWritePin(AnalogPin.P14, 0)
         pins.digitalWritePin(DigitalPin.P15, 1)
         pins.analogWritePin(AnalogPin.P16, 0)
     }
 
-    
+
 /**
       * ReadADC analog channel 0-7   
       *    
@@ -194,7 +194,7 @@ namespace IBIT {
             return ReadADC = pins.i2cReadNumber(72, NumberFormat.UInt16BE, false)      
     }
 
-
+/*
     /**
       * Sound a buzz.
       *
@@ -202,9 +202,9 @@ namespace IBIT {
       */
     //% blockId="bitbot_buzz" block="buzz sound %flag"
     //% weight=95
-    export function buzz(flag: number): void {
+  /*  export function buzz(flag: number): void {
         pins.digitalWritePin(DigitalPin.P14, flag === 0 ? 0 : 1);
-    }
+    }*/
 
     /**
       * Read line sensor.
@@ -213,13 +213,13 @@ namespace IBIT {
       */
     //% blockId="bitbot_read_line" block="read line sensor %sensor"
     //% weight=90
-    export function readLine(sensor: BBLineSensor): number {
+    /*export function readLine(sensor: BBLineSensor): number {
         if (sensor == BBLineSensor.Left) {
             return pins.digitalReadPin(DigitalPin.P11);
         } else {
             return pins.digitalReadPin(DigitalPin.P5);
         }
-    }
+    }*/
 
     /**
       * Read light sensor.
