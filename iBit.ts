@@ -53,10 +53,10 @@ enum readADC {
   * Enumeration of Servo.
   */
 enum servo{
-    //% block="SV 1"
+    //% block="1"
     SV1,
-    //% Block="SV 2"
-    SV2
+    //% Block="2"
+    SV23
 }
 
 
@@ -179,7 +179,7 @@ namespace IBIT {
         if(Servo == servo.SV1){
             pins.servoWritePin(AnalogPin.P8, Degree)
         }
-        if(Servo == servo.SV2){
+        if(Servo == servo.SV23){
             pins.servoWritePin(AnalogPin.P12, Degree)
         }
 
