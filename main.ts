@@ -158,8 +158,22 @@ namespace IBIT {
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
     }
-   
+   /**
+      * Block for stop all motor. 
+      *
+      * @param  MotorStop  motor all stop
+      * 
+      */
+    //% blockId="ibit_MotorStop" block="MotorStop"
+    //% weight=97
+    export function MotorStop():void{
+        pins.digitalWritePin(DigitalPin.P13, 1)
+        pins.analogWritePin(AnalogPin.P14, 0)
+        pins.digitalWritePin(DigitalPin.P15, 1)
+        pins.analogWritePin(AnalogPin.P16, 0)
+    }
 
+    
 /**
       * ReadADC analog channel 0-7   
       *    
@@ -167,7 +181,7 @@ namespace IBIT {
       *
       */
     //% blockId="ibit_readADC" block="Read %readADC"
-    //% weight=97
+    //% weight=96
     export function ReadADC(ReadADC:readADC): number{ 
             let ADCValue:number;
             readADC
