@@ -27,6 +27,27 @@ enum spin {
     //% block="Right"
     Right
 }
+/**
+  * Enumeration of ReadADC.
+  */
+enum readADC {
+    //% block="ADC 0"
+    ADC0,
+    //% block="ADC 1"
+    ADC1,
+    //% block="ADC 2"
+    ADC2,
+    //% block="ADC 3"
+    ADC3,
+    //% block="ADC 4"
+    ADC4,
+    //% block="ADC 5"
+    ADC5,
+    //% block="ADC 6"
+    ADC6,
+    //% block="ADC 7"
+    ADC7
+}
 
 /**
   * Enumeration of line sensors.
@@ -65,22 +86,7 @@ enum BBPingUnit {
  */
 //% weight=20 color=#54ceb8 icon="\uf0fb"
 namespace IBIT {
-
-    let neoStrip: neopixel.Strip;
-
-    /**
-     * Return a neo pixel strip.
-     */
-    //% blockId="bitbot_neo" block="neo strip"
-    //% weight=5
-    export function neo(): neopixel.Strip {
-        if (!neoStrip) {
-            neoStrip = neopixel.create(DigitalPin.P13, 12, NeoPixelMode.RGB)
-        }
-
-        return neoStrip;
-    }
-   
+      
     /**
       * Drive motor(s) Forward or Backward.
       *
@@ -152,6 +158,34 @@ namespace IBIT {
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
     }
+
+/**
+      * ReadADC analog channel 0-7   
+      *    
+      * @param ReadADC ReadADC Select Analog Channel 0-7 
+      *
+      */
+    //% blockId="ibit_readADC" block="ReadADC Channel %channel"
+    //% weight=97
+    export function ReadADC(ReadADC:readADC): number{
+        let channel_addr = [132, 196, 148, 212, 164, 228, 180, 244]
+        let adc = [0]
+        for (let index = 0; index <= 7; index++) {
+            pins.i2cWriteNumber(
+            72,
+            channel_addr[index],
+            NumberFormat.UInt8LE,
+            false
+            )
+            adc[index] = pins.i2cReadNumber(72, NumberFormat.UInt16BE, false)
+        }
+
+    }
+
+
+
+
+
 
     /**
       * Sound a buzz.
@@ -307,4 +341,8 @@ namespace IBIT {
             default: return d;
         }
     }*/
+
+
+
+
 }
