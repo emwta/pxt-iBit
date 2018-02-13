@@ -55,7 +55,7 @@ enum readADC {
 enum servo{
     //% block="1"
     SV1,
-    //% Block="2"
+    //% block="2"
     SV2
 }
 
@@ -72,7 +72,7 @@ namespace IBIT {
       * @param Motor motor to drive.
       * @param speed speed of motor
       */
-    //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
+    //% blockId="ibit_Motor" block="Motor %Motor|speed %speed"
     //% weight=100
     export function Motor(Motor: motor, speed: number): void {  
         let motorspeed = pins.map(speed,0,100,0,1023)     
@@ -96,7 +96,7 @@ namespace IBIT {
       * @param Turn motor to drive.
       * @param speed speed of Turn
       */
-    //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
+    //% blockId="ibit_Turn" block="Turn %Turn|speed %speed"
     //% weight=99
     export function Turn(Turn: turn, speed: number): void {       
       let motorspeed = pins.map(speed,0,100,0,1023)      
@@ -120,7 +120,7 @@ namespace IBIT {
       * @param Spin motor to drive.
       * @param speed speed of Spin
       */
-    //% blockId="ibit_Spin" block="Spin %motor|speed %speed"
+    //% blockId="ibit_Spin" block="Spin %Spin|speed %speed"
     //% weight=98
     export function Spin(Spin: spin, speed: number): void {   
         let motorspeed = pins.map(speed,0,100,0,1023)    
