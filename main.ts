@@ -121,9 +121,10 @@ namespace IBIT {
     //% weight=99
     export function Turn(Turn: turn, speed: number): void {       
       let motorspeed = pins.map(speed,0,100,0,1023)
+      let motorspeedturn = motorspeed/2
         if (Turn == turn.Left) {           
             pins.digitalWritePin(DigitalPin.P13, 1)
-            pins.analogWritePin(AnalogPin.P14, motorspeed/2)
+            pins.analogWritePin(AnalogPin.P14, motorspeedturn)
             pins.digitalWritePin(DigitalPin.P15, 0)
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
@@ -131,7 +132,7 @@ namespace IBIT {
             pins.digitalWritePin(DigitalPin.P13, 0)
             pins.analogWritePin(AnalogPin.P14, motorspeed)
             pins.digitalWritePin(DigitalPin.P15, 1)
-            pins.analogWritePin(AnalogPin.P16, motorspeed/2)
+            pins.analogWritePin(AnalogPin.P16, motorspeedturn)
         }
     }
 
@@ -157,10 +158,7 @@ namespace IBIT {
             pins.digitalWritePin(DigitalPin.P15, 1)
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
-    }
-   
-
-   
+    }   
 
 
 
