@@ -167,7 +167,7 @@ namespace IBIT {
       */
     //% blockId="ibit_readADC" block="Read Channel %channel"
     //% weight=97
-    export function ReadADC(ReadADC:ReadADC): void{
+    export function ReadADC(ReadADC:ReadADC): number{
         let channel_addr = [132, 196, 148, 212, 164, 228, 180, 244]
         let adc = [0]
         for (let index = 0; index <= 7; index++) {
