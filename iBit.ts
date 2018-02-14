@@ -67,9 +67,8 @@ enum servo{
 namespace iBIT {
       
     /**
-      * Drive motor(s) Forward or Backward.
+      * Drive motors Forward or Backward max speed motors 100.
       *
-      * @param Motor motor to drive.
       * @param speed percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
@@ -92,7 +91,7 @@ namespace iBIT {
     }
 
      /**
-      * Drive motor(s) TurnLeft or TurnRight .
+      * Drive motors TurnLeft or TurnRight max speed motors 100.
       *
       * @param Turn motor to drive.
       * @param speed percent of maximum speed, eg: 50
@@ -117,7 +116,7 @@ namespace iBIT {
     }
 
     /**
-      * Drive motor(s) SpinLeft or SpinRight.
+      * Drive motors SpinLeft or SpinRight max speed motors 100.
       *
       * @param Spin motor to drive.
       * @param speed percent of maximum speed, eg: 50
@@ -141,9 +140,8 @@ namespace iBIT {
         }
     }
    /**
-      * Block for stop all motor. 
-      *
-      * @param  MotorStop  motor all stop
+      * 
+      * Block for stop all motor.       
       * 
       */
     //% blockId="ibit_MotorStop" block="Motor Stop"
@@ -156,10 +154,9 @@ namespace iBIT {
     }
 
 
-/**
-      * ReadADC analog channel 0-7   
-      *    
-      * @param ReadADC ReadADC Select Analog Channel 0-7 
+    /* 
+      *      
+      * ReadADC Select Analog Channel 0-7 
       *
       */
     //% blockId="ibit_readADC" block="Read %readADC"
@@ -175,7 +172,9 @@ namespace iBIT {
             )
             return ReadADC = pins.i2cReadNumber(72, NumberFormat.UInt16BE, false)      
     }
+
     /**
+     * Control Servo 1 or 2 degree is 0-180
      * @param Degree servo degree 0-180, eg: 90
      */
     //% blockId="ibit_Servo" block="Servo %servo|Degree %Degree"
