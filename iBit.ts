@@ -68,7 +68,7 @@ namespace iBIT {
       
     /**
       * Drive motors Forward or Backward max speed motors 100.
-      *
+      * @param motor motor to drive.
       * @param speed percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
