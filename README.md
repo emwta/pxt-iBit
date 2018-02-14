@@ -19,10 +19,13 @@ The following micro:bit pins are used for analog and digital sensors, motor driv
 ###  Using Block Motor
 
 Use ibit block motor to drive motor forward or backward. The value speed motor between 0 to 100.
-Forward 100 motor is max speed to forward. 
-Backward 100 motor is max speed to backward. 
+
+* The motor select direction must be either `Forward` or `Backward`
+* Speed is an integer value between `0 - 100`
+* if need to reverse motor select direction motor to backward speed 0-100. 
 
 ```blocks
 iBIT.Motor(motor.Forward, 100)
+
 iBIT.Motor(motor.Backward, 100)
 ```
