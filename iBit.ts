@@ -64,7 +64,7 @@ enum servo{
  * Custom blocks
  */
 //% weight=50 color=#02AFEC icon="\uf135"
-namespace IBIT {
+namespace iBIT {
       
     /**
       * Drive motor(s) Forward or Backward.
