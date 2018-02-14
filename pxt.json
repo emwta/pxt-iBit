@@ -1,6 +1,6 @@
 {
     "name": "iBit",
-    "version": "1.0.0",
+    "version": "1.2.10",
     "description": "A iBit package for pxt-microbit",
     "license": "MIT",
     "dependencies": {
