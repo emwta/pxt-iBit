@@ -239,3 +239,51 @@ namespace IBIT {
 
     }
 }
+
+  /**
+      * Drive motor(s) TurnLeft or TurnRight .
+      *
+      * @param Turn motor to drive.
+      * @param speed percent of maximum speed, eg: 50
+      */
+    //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
+    //% speed.min=0 speed.max=100
+    //% weight=99
+    export function Turn(Turn: turn, speed: number): void {       
+        let motorspeed = pins.map(speed,0,100,0,1023)      
+          if (Turn == turn.Left) {           
+              pins.digitalWritePin(DigitalPin.P13, 1)
+              pins.analogWritePin(AnalogPin.P14, 0)
+              pins.digitalWritePin(DigitalPin.P15, 0)
+              pins.analogWritePin(AnalogPin.P16, motorspeed)
+          }
+          if (Turn == turn.Right) {
+              pins.digitalWritePin(DigitalPin.P13, 0)
+              pins.analogWritePin(AnalogPin.P14, motorspeed)
+              pins.digitalWritePin(DigitalPin.P15, 1)
+              pins.analogWritePin(AnalogPin.P16, 0)
+          }
+      }  /**
+      * Drive motor(s) TurnLeft or TurnRight .
+      *
+      * @param Turn motor to drive.
+      * @param speed percent of maximum speed, eg: 50
+      */
+    //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
+    //% speed.min=0 speed.max=100
+    //% weight=99
+    export function Turn(Turn: turn, speed: number): void {       
+      let motorspeed = pins.map(speed,0,100,0,1023)      
+        if (Turn == turn.Left) {           
+            pins.digitalWritePin(DigitalPin.P13, 1)
+            pins.analogWritePin(AnalogPin.P14, 0)
+            pins.digitalWritePin(DigitalPin.P15, 0)
+            pins.analogWritePin(AnalogPin.P16, motorspeed)
+        }
+        if (Turn == turn.Right) {
+            pins.digitalWritePin(DigitalPin.P13, 0)
+            pins.analogWritePin(AnalogPin.P14, motorspeed)
+            pins.digitalWritePin(DigitalPin.P15, 1)
+            pins.analogWritePin(AnalogPin.P16, 0)
+        }
+    }
