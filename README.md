@@ -1,6 +1,6 @@
 # iBit Package for Microbit Robot-
 
-The package adds support for the iBit add-on board from INEX.
+The package adds support for the iBit add-on board from [INEX](https://inex.co.th).
 
 ### iBit Pins Used 
 
