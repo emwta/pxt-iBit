@@ -6,7 +6,7 @@ The package adds support for the iBit add-on board from [INEX](https://inex.co.t
 
 ### iBit Pins Used 
 
-The following micro:bit pins are used for analog and digital sensors, motor driving, servo:  
+The following micro:bit pins are used for analog and digital sensors, motor driver, servo:  
 
 * ``P0`` -- Analog Input 0
 * ``P1`` -- Analog Input 1
