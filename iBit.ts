@@ -67,8 +67,6 @@ enum servo{
 namespace iBIT {
       
     /**Block motors set direction Forward or Backward and speed between 0 - 100.
-      * 
-      *
       * @param speed percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
@@ -90,9 +88,7 @@ namespace iBIT {
         }
     }
 
-     /**Block motors set direction TurnLeft or TurnRight and speed between 0 - 100.
-      *
-      * 
+     /**Block motors set direction TurnLeft or TurnRight and speed between 0 - 100. 
       * @param speed percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
@@ -114,9 +110,7 @@ namespace iBIT {
         }
     }
 
-    /**Block motors set direction SpinLeft or SpinRight and speed between 0 - 100.    
-      * 
-      *
+    /**Block motors set direction SpinLeft or SpinRight and speed between 0 - 100.   
       * @param speed percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Spin" block="Spin %motor|speed %speed"
