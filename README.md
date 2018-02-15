@@ -90,13 +90,13 @@ iBIT.ReadADC(readADC.ADC0)
 
 ### Example
 
-* ReadADC anaog shownumber
+* ReadADC analog show number. if need to use other channel just change ADC channel.
 
 ```blocks
 basic.showNumber(iBIT.ReadADC(readADC.ADC0))
 ```
 
-* Motors Forward speed 0-100 then Backward speed 0-100.
+* Motors Forward count speed 0-100 then Backward speed count 0-100.
 
 ```blocks
 let speed = 0
@@ -111,4 +111,42 @@ basic.forever(() => {
     }
 })
 ```
+
+* When pressed button A Turn Left speed 50, when pressed button B Turn Right speed 50.
+
+```blocks
+input.onButtonPressed(Button.A, () => {
+    iBIT.Turn(turn.Left, 50)
+})
+input.onButtonPressed(Button.B, () => {
+    iBIT.Turn(turn.Right, 50)
+})
+```
+
+* When pressed button A Spin Left speed 50, when pressed button B Spin Right speed 50.
+
+```blocks
+input.onButtonPressed(Button.A, () => {
+    iBIT.Spin(spin.Left, 50)
+})
+input.onButtonPressed(Button.B, () => {
+    iBIT.Spin(spin.Right, 50)
+})
+```
+
+* Example for Servo, count degree servo 1,2 degree from 0 to 180 if degree as 180 set to 0 
+
+```blocks
+basic.forever(() => {
+    for (let Degree = 0; Degree <= 180; Degree++) {
+        iBIT.Servo(servo.SV1, Degree)
+        iBIT.Servo(servo.SV2, Degree)
+        basic.pause(10)
+        while (Degree == 180) {
+            Degree = 0
+        }
+    }
+})
+```
+
 
