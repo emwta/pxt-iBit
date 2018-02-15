@@ -66,7 +66,7 @@ enum servo{
 //% weight=50 color=#02AFEC icon="\uf135"
 namespace iBIT {
       
-    /**Drive motors Forward or Backward set speed between 0 - 100.
+    /**Block motors set direction Forward or Backward and speed between 0 - 100.
       * 
       *
       * @param speed percent of maximum speed, eg: 50
@@ -90,7 +90,7 @@ namespace iBIT {
         }
     }
 
-     /**Drive motors TurnLeft or TurnRight set speed between 0 - 100.
+     /**Block motors set direction TurnLeft or TurnRight and speed between 0 - 100.
       *
       * 
       * @param speed percent of maximum speed, eg: 50
@@ -114,7 +114,7 @@ namespace iBIT {
         }
     }
 
-    /**Drive motors SpinLeft or SpinRight set speed between 0 - 100.    
+    /**Block motors set direction SpinLeft or SpinRight and speed between 0 - 100.    
       * 
       *
       * @param speed percent of maximum speed, eg: 50
@@ -150,7 +150,7 @@ namespace iBIT {
     }
 
 
-    /**ReadADC Select Analog Channel 0-7 
+    /**ReadADC for read analog sensor select ADC channel 0-7. 
       *
       */
     //% blockId="ibit_readADC" block="Read %readADC"
@@ -168,7 +168,7 @@ namespace iBIT {
     }
 
     /**
-     * Control Servo 1 or 2 degree between 0 - 180
+     * Control Servo 1 or 2 set degree between 0 - 180
      * @param Degree servo degree 0-180, eg: 90
      */
     //% blockId="ibit_Servo" block="Servo %servo|Degree %Degree"
