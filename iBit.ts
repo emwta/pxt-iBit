@@ -66,8 +66,7 @@ enum servo{
 //% weight=50 color=#02AFEC icon="\uf135"
 namespace iBIT {
       
-    /**
-      * Drive motors Forward or Backward set speed between 0 - 100.
+    /**Drive motors Forward or Backward set speed between 0 - 100.
       * 
       * @param speed percent of maximum speed, eg: 50
       */
@@ -90,8 +89,7 @@ namespace iBIT {
         }
     }
 
-     /**
-      * Drive motors TurnLeft or TurnRight set speed between 0 - 100.
+     /**Drive motors TurnLeft or TurnRight set speed between 0 - 100.
       *
       * 
       * @param speed percent of maximum speed, eg: 50
@@ -115,9 +113,7 @@ namespace iBIT {
         }
     }
 
-    /**
-      * Drive motors SpinLeft or SpinRight set speed between 0 - 100.
-      *
+    /**Drive motors SpinLeft or SpinRight set speed between 0 - 100.    
       * 
       * @param speed percent of maximum speed, eg: 50
       */
@@ -139,9 +135,7 @@ namespace iBIT {
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
     }
-   /**
-      * 
-      * Block for stop all motors.       
+   /**Block for stop all motors.       
       * 
       */
     //% blockId="ibit_MotorStop" block="Motor Stop"
@@ -154,9 +148,7 @@ namespace iBIT {
     }
 
 
-    /* 
-      *      
-      * ReadADC Select Analog Channel 0-7 
+    /**ReadADC Select Analog Channel 0-7 
       *
       */
     //% blockId="ibit_readADC" block="Read %readADC"
