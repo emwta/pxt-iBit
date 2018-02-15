@@ -2,6 +2,8 @@
 
 The package adds support for the iBit add-on board from [INEX](https://inex.co.th).
 
+TODO: To use this package, go to https://pxt.microbit.org, click ``Add package`` and search for **iBit**.
+
 ### iBit Pins Used 
 
 The following micro:bit pins are used for analog and digital sensors, motor driving, servo:  
