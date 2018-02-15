@@ -1,6 +1,6 @@
 # iBit Package for Microbit Robot
 
-![ibit](https://raw.githubusercontent.com/emwta/pxt-iBit/master/icon.png = 450x455)  
+![ibit](https://raw.githubusercontent.com/emwta/pxt-iBit/master/icon.png =450x455)  
 
 The package adds support for the iBit add-on board from [INEX](https://inex.co.th).
 
