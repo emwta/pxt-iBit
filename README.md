@@ -112,7 +112,7 @@ basic.forever(() => {
 })
 ```
 
-* When pressed button A Turn Left speed 50, when pressed button B Turn Right speed 50.
+* When pressed button `A` Turn Left speed 50, when pressed button `B` Turn Right speed 50.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -123,7 +123,7 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-* When pressed button A Spin Left speed 50, when pressed button B Spin Right speed 50.
+* When pressed button `A` Spin Left speed 50, when pressed button `B` Spin Right speed 50.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
