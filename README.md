@@ -1,5 +1,7 @@
 # iBit Package for Microbit Robot
 
+![ibit](https://raw.githubusercontent.com/emwta/pxt-iBit/master/icon.png)  
+
 The package adds support for the iBit add-on board from [INEX](https://inex.co.th).
 
 ### iBit Pins Used 
