@@ -67,8 +67,8 @@ enum servo{
 namespace iBIT {
       
     /**
-      * Drive motors Forward or Backward max speed motors 100.
-      * @param motor motor to drive.
+      * Drive motors Forward or Backward set speed between 0 - 100.
+      * 
       * @param speed percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
@@ -91,9 +91,9 @@ namespace iBIT {
     }
 
      /**
-      * Drive motors TurnLeft or TurnRight max speed motors 100.
+      * Drive motors TurnLeft or TurnRight set speed between 0 - 100.
       *
-      * @param Turn motor to drive.
+      * 
       * @param speed percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
@@ -116,9 +116,9 @@ namespace iBIT {
     }
 
     /**
-      * Drive motors SpinLeft or SpinRight max speed motors 100.
+      * Drive motors SpinLeft or SpinRight set speed between 0 - 100.
       *
-      * @param Spin motor to drive.
+      * 
       * @param speed percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Spin" block="Spin %motor|speed %speed"
@@ -141,7 +141,7 @@ namespace iBIT {
     }
    /**
       * 
-      * Block for stop all motor.       
+      * Block for stop all motors.       
       * 
       */
     //% blockId="ibit_MotorStop" block="Motor Stop"
@@ -174,7 +174,7 @@ namespace iBIT {
     }
 
     /**
-     * Control Servo 1 or 2 degree is 0-180
+     * Control Servo 1 or 2 degree between 0 - 180
      * @param Degree servo degree 0-180, eg: 90
      */
     //% blockId="ibit_Servo" block="Servo %servo|Degree %Degree"
