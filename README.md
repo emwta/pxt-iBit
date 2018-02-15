@@ -1,4 +1,4 @@
-# iBit Package for Microbit Robot
+# iBit Package for Microbit Robot-
 
 The package adds support for the iBit add-on board from INEX.
 
@@ -85,7 +85,30 @@ Block ReadADC for read analog sensor on iBit have ADC 8 Channel.
 * Use value of sensor to create conditions for the robot to mission. 
 
 ```block
-basic.showNumber(iBIT.ReadADC(readADC.ADC0))
+iBIT.ReadADC(readADC.ADC0)
 ```
 
 ### Example
+
+* ReadADC anaog shownumber
+
+```blocks
+basic.showNumber(iBIT.ReadADC(readADC.ADC0))
+```
+
+* Motors Forward speed 0-100 then Backward speed 0-100.
+
+```blocks
+let speed = 0
+basic.forever(() => {
+    for (let speed = 0; speed <= 100; speed++) {
+        iBIT.Motor(motor.Forward, speed)
+        basic.pause(50)
+    }
+    for (let speed = 0; speed <= 100; speed++) {
+        iBIT.Motor(motor.Backward, speed)
+        basic.pause(50)
+    }
+})
+```
+
