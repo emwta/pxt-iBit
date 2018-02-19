@@ -1,32 +1,34 @@
-# iBit Package for Microbit Robot
+# iBIT block package for iBIT robot kit
+
+powered by micro:bit
 
 ![ibitbot](https://raw.githubusercontent.com/emwta/pxt-iBit/master/icon.png)  
 
-The package adds support for the iBit add-on board from [INEX](https://inex.co.th).
+The package adds support for the iBIT conroller board from Innovative Experiment [INEX](https://inex.co.th).
 
-### iBit Pins Used 
+### micro:bit Pin Assignment
 
-The following micro:bit pins are used for analog and digital sensors, motor driver, servo:  
+The following micro:bit pins are used for analog and digital sensors, DC motor drivers and servo motors:
 
-* ``P0`` -- Analog Input 0
-* ``P1`` -- Analog Input 1
-* ``P2`` -- Analog Input 2
+* ``P0`` -- Analog Input 0 (micro:bit default)
+* ``P1`` -- Analog Input 1 (micro:bit default)
+* ``P2`` -- Analog Input 2 (micro:bit default)
 * ``P8`` -- Digital Input/Output and AnalogWrite/Servo1
 * ``P12`` -- Digital Input/Output and AnalogWrite/Servo2
-* ``P13`` -- DigitalWrite Pin for control direction motor 1
-* ``P14`` -- AnalogWrite Pin for control speed motor 1
-* ``P15`` -- DigitalWrite Pin for control direction motor 2
-* ``P16`` -- AnalogWrite Pin for control speed motor 2
-* ``P19`` -- motor driver - SCL
-* ``P20`` -- motor driver - SDA
+* ``P13`` -- DigitalWrite Pin for DC motor control direction 1
+* ``P14`` -- AnalogWrite Pin for DC motor speed control 1
+* ``P15`` -- DigitalWrite Pin for DC motor control direction 2
+* ``P16`` -- AnalogWrite Pin for DC motor speed control 2
+* ``P19`` -- SCL connected to I2C-based 12-bit ADC chip (ADS7828)
+* ``P20`` -- SDA connected to I2C-based 12-bit ADC chip (ADS7828)
 
-### Block Motor
+### Motor control Block
 
-Use iBit block motor to drive motor forward or backward. The value speed motor between 0 to 100.
+Use iBIT's motor block to drives motor forward and backward. The speed motor is adjustable between 0 to 100.
 
-* The motor select direction must be either `Forward` or `Backward`
+* The dirrection must be select either `Forward` or `Backward`
 * Speed is an integer value between `0 - 100`
-* if need to reverse motor select direction motor to backward speed 0-100. 
+
 
 ```blocks
 iBIT.Motor(motor.Forward, 100)
@@ -34,9 +36,9 @@ iBIT.Motor(motor.Forward, 100)
 iBIT.Motor(motor.Backward, 100)
 ```
 
-### Block Spin
+### Spin Block
 
-Block spin to control both motors will be inverse side. example if choose `Left` motor2 spin forward and motor1 spin backward.
+Spin block is used to control both motors separately. For example, choose one motor spin with forward direction another one spin with backward direction.
 
 * The Spin select direction must be either `Left` or `Right`
 * Speed is an integer value between `0 - 100`
@@ -47,9 +49,9 @@ iBIT.Spin(spin.Left, 100)
 iBIT.Spin(spin.Right, 100)
 ```
 
-### Block Turn
+### Turn Block
 
-Block turn to control motor one side stop and one side spin.
+The Turn block is used to to control the robot movment by turning. The one motor will stop, another one is moving. The vipot point is a center of the robot body.
 
 * The Turn select direction must be either `Left` or `Right`
 * Speed is an integer value between `0 - 100`
@@ -60,17 +62,17 @@ iBIT.Turn(turn.Left, 100)
 iBIT.Turn(turn.Right, 100)
 ```
 
-### Block Motor Stop
+### Motor Stop Block 
 
-Block Motor Stop will be stop both motors set speed to `0` automatic.
+The Motor Stop block is used to stop both motors. The speed is set to `0` automatic.
 
 ```blocks
 iBIT.MotorStop()
 ```
 
-### Block Servo
+### Servo Block
 
-Use block for control servo degree value `0 - 180`
+Use this block for control the servo's moving degree from 0 to 180
 
 * Degree is an integer value between `0 - 180`
 
@@ -78,13 +80,13 @@ Use block for control servo degree value `0 - 180`
 iBIT.Servo(servo.SV1, 90)
 ```
 
-### Block Read ADC
+### ReadAD Block
 
-Block ReadADC for read analog sensor on iBit have ADC 8 Channel.
+This block is used to read the analog input data from the I2C-based ADC integrated circuit, ADS7828. The resolution of conversion is 12-bit. Data will be 0 to 4095. iBIT have 8-ch analog inputs. The pinout voltage range is 0 to +3.3V
 
-* Insert analog sensor `ADC0 - ADC7`
-* Block ReadADC select channel `ADC0 - ADC7` for read analog sensor.
-* Use value of sensor to create conditions for the robot to mission. 
+* Analog sensor port are `ADC0 - ADC7`
+* Select analog channel from `ADC0 - ADC7` for reading the analog sensor.
+* Get the analog value to set the conditions for the robot's mission.
 
 ```block
 iBIT.ReadADC(readADC.ADC0)
@@ -92,13 +94,13 @@ iBIT.ReadADC(readADC.ADC0)
 
 ### Example
 
-* ReadADC analog show number. if need to use other channel just change ADC channel.
+* Read the analog input 0 and display the conversion data on micro:bit. User can change the analog channel any time.
 
 ```blocks
 basic.showNumber(iBIT.ReadADC(readADC.ADC0))
 ```
 
-* Motors Forward count speed 0-100 then Backward speed count 0-100.
+* Drive the motors with Forward and Backward by counting speed `0 - 100`
 
 ```blocks
 let speed = 0
@@ -114,7 +116,7 @@ basic.forever(() => {
 })
 ```
 
-* When pressed button `A` Turn Left speed 50, when pressed button `B` Turn Right speed 50.
+* Drive the motors by pressing button `A` and `B`. Turn Left by speed 50 when pressed button `A` and Turn Right by speed 50 when pressed button `B`.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -125,7 +127,7 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-* When pressed button `A` Spin Left speed 50, when pressed button `B` Spin Right speed 50.
+* Spin the motors by pressing button `A` and `B`. Spin Left by speed 50 when pressed button `A` and Spin Right by speed 50 when pressed button `B`.
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
@@ -136,7 +138,7 @@ input.onButtonPressed(Button.B, () => {
 })
 ```
 
-* Example for Servo, count degree servo 1,2 degree from 0 to 180 if degree as 180 set to 0 
+* Example for Servo, drive the servo motor's movement angle at Servo output 1 and 2 from `0 - 180` and back to 0 to restart again. 
 
 ```blocks
 basic.forever(() => {
