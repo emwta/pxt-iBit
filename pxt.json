@@ -8,7 +8,7 @@
     },
     "files": [
         "README.md",
-        "iBITsdf.ts"        
+        "iBIT.ts"        
     ],
     "testFiles": [
         "tests.ts"
