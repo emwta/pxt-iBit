@@ -63,7 +63,7 @@ enum servo{
 /**
  * Custom blocks
  */
-//% weight=60 color=#02AFEC icon="\uf135"
+//% weight=50 color=#02AFEC icon="\uf135"
 namespace iBIT {
       
     /**Block motors set direction Forward or Backward and speed between 0 - 100.
