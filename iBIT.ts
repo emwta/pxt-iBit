@@ -72,12 +72,12 @@ enum motorCH {
 //% weight=50 color=#02AFEC icon="\uf135"
 namespace iBIT {
       
-    /**Block motors set direction Forward or Backward and speed between 0 - 100.
+    /**Motor Mlock to drives motor forward and backward. The speed motor is adjustable between 0 to 100.
       * @param speed percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
     //% speed.min=0 speed.max=100
-    //% weight=100
+    //% weight=95
     export function Motor(Motor: motor, speed: number): void {  
         let motorspeed = pins.map(speed,0,100,0,1023)     
         if (Motor == motor.Forward) {
@@ -94,12 +94,12 @@ namespace iBIT {
         }
     }
 
-     /**Block motors set direction TurnLeft or TurnRight and speed between 0 - 100. 
+     /**Turn Block set direction TurnLeft or TurnRight. The speed motor is adjustable between 0 to 100.
       * @param speed percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
     //% speed.min=0 speed.max=100
-    //% weight=99
+    //% weight=90
     export function Turn(Turn: turn, speed: number): void {       
       let motorspeed = pins.map(speed,0,100,0,1023)      
         if (Turn == turn.Left) {           
@@ -116,12 +116,12 @@ namespace iBIT {
         }
     }
 
-    /**Block motors set direction SpinLeft or SpinRight and speed between 0 - 100.   
+    /**Spin Block set direction SpinLeft or SpinRight. The speed motor is adjustable between 0 to 100.  
       * @param speed percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Spin" block="Spin %motor|speed %speed"
     //% speed.min=0 speed.max=100
-    //% weight=98
+    //% weight=85
     export function Spin(Spin: spin, speed: number): void {   
         let motorspeed = pins.map(speed,0,100,0,1023)    
         if (Spin == spin.Left) {
@@ -137,11 +137,11 @@ namespace iBIT {
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
     }
-   /**Block for stop all motors.       
+   /**The Motor Stop block is used to stop both motors. The speed is set to 0 automatic.       
       * 
       */
     //% blockId="ibit_MotorStop" block="Motor Stop"
-    //% weight=97
+    //% weight=80
     export function MotorStop():void{
         pins.digitalWritePin(DigitalPin.P13, 1)
         pins.analogWritePin(AnalogPin.P14, 0)
@@ -150,11 +150,11 @@ namespace iBIT {
     }
 
 
-    /**ReadADC for read analog sensor select ADC channel 0-7. 
+    /**ReadADC for read analog sensor, Select ADC channel 0-7. 
       *
       */
     //% blockId="ibit_readADC" block="Read %readADC"
-    //% weight=95
+    //% weight=75
     export function ReadADC(ReadADC:readADC): number{ 
             let ADCValue:number;
 
@@ -173,7 +173,7 @@ namespace iBIT {
      */
     //% blockId="ibit_Servo" block="Servo %servo|Degree %Degree"
     //% Degree.min=0 Degree.max=180
-    //% weight=96
+    //% weight=70
     export function Servo(Servo:servo, Degree:number): void{
         if(Servo == servo.SV1){
             pins.servoWritePin(AnalogPin.P8, Degree)
@@ -185,9 +185,12 @@ namespace iBIT {
     }
 
 
-    //% blockId="ibit_SelectMotor" block="Motor %motorCH | Direction %Motor | Speed %Speed"
+    /**MotorCH set Motor Channel and Direction. The speed motor is adjustable between 0 to 100.   
+      * @param speed percent of maximum speed, eg: 50
+      */
+    //% blockId="ibit_MotorCH" block="Motor %motorCH | Direction %Motor | Speed %Speed"
     //% Speed.min=0 Speed.max=100
-    //% weight=96
+    //% weight=100
     export function MotorCH(Channel:motorCH, Direction:motor, Speed:number): void {
         let motorspeed = pins.map(Speed, 0, 100, 0, 1023)  
         
