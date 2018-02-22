@@ -188,15 +188,23 @@ namespace iBIT {
     //% blockId="ibit_SelectMotor" block="Motor %motorCH | Direction %Motor | Speed %Speed"
     //% Speed.min=0 Speed.max=100
     //% weight=96
-    export function Motor_CH(Channel:motorCH, Direction:motor, Speed:number): void {
+    export function MotorCH(Channel:motorCH, Direction:motor, Speed:number): void {
         let motorspeed = pins.map(Speed, 0, 100, 0, 1023)  
         
         if (Channel == motorCH.M1 && Direction == motor.Forward) {
-            pins.digitalWritePin(DigitalPin.P13, 0)
+            pins.digitalWritePin(DigitalPin.P13, 1)
             pins.analogWritePin(AnalogPin.P14, motorspeed)            
         }
         else if (Channel == motorCH.M2 && Direction == motor.Forward) {
             pins.digitalWritePin(DigitalPin.P15, 0)
+            pins.analogWritePin(AnalogPin.P16, motorspeed)
+        }
+        else if (Channel == motorCH.M1 && Direction == motor.Backward) {
+            pins.digitalWritePin(DigitalPin.P13, 0)
+            pins.analogWritePin(AnalogPin.P14, motorspeed)  
+        }
+        else if (Channel == motorCH.M2 && Direction == motor.Backward) {
+            pins.digitalWritePin(DigitalPin.P15, 1)
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
     }
