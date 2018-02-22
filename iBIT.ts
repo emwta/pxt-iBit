@@ -72,7 +72,7 @@ enum motorCH {
 //% weight=50 color=#02AFEC icon="\uf135"
 namespace iBIT {
       
-    /**Motor Mlock to drives motor forward and backward. The speed motor is adjustable between 0 to 100.
+    /**Motor Block to drives motor forward and backward. The speed motor is adjustable between 0 to 100.
       * @param speed percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
