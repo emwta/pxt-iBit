@@ -59,6 +59,12 @@ enum servo{
     SV2
 }
 
+enum motorCH {
+    //% block="1"
+    M1,
+    //% block="2"
+    M2
+}
 
 /**
  * Custom blocks
@@ -176,5 +182,15 @@ namespace iBIT {
             pins.servoWritePin(AnalogPin.P12, Degree)
         }
 
+    }
+
+
+
+
+    //% blockId="ibit_SelectMotor" block="Motor Channel %motorCH | Direction %Motor | Speed %Speed"
+    //% Speed.min=0 Speed.max=180
+    //% weight=96
+    export function Motor_CH(Motor:motorCH, Direction:motor, Speed:number): void {
+        
     }
 }
