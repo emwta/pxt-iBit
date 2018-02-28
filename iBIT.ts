@@ -109,9 +109,9 @@ namespace iBIT {
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
         if (Turn == turn.Right) {
-            pins.digitalWritePin(DigitalPin.P13, 0)
+            pins.digitalWritePin(DigitalPin.P13, 1)
             pins.analogWritePin(AnalogPin.P14, motorspeed)
-            pins.digitalWritePin(DigitalPin.P15, 1)
+            pins.digitalWritePin(DigitalPin.P15, 0)
             pins.analogWritePin(AnalogPin.P16, 0)
         }
     }
