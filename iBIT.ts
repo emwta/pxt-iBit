@@ -186,7 +186,7 @@ namespace iBIT {
 
 
     /**MotorCH set Motor Channel and Direction. The speed motor is adjustable between 0 to 100.   
-      * @param speed percent of maximum speed, eg: 50
+      * @param Speed percent of maximum Speed, eg: 50
       */
     //% blockId="ibit_MotorCH" block="Motor %motorCH | Direction %Motor | Speed %Speed"
     //% Speed.min=0 Speed.max=100
