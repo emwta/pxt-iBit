@@ -46,7 +46,7 @@ enum readADC {
     //% block="ADC 6"
     ADC6 = 180,
     //% block="ADC 7"
-    ADC7 = 224
+    ADC7 = 244
 }
 
 /**
