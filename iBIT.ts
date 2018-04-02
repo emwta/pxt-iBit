@@ -27,6 +27,7 @@ enum spin {
     //% block="Right \u21c5"
     Right
 }
+
 /**
   * Enumeration of ReadADC.
   */
@@ -137,6 +138,7 @@ namespace iBIT {
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
     }
+    
    /**The Motor Stop block is used to stop both motors. The speed is set to 0 automatic.       
       * 
       */
@@ -154,7 +156,7 @@ namespace iBIT {
       *
       */
     //% blockId="ibit_readADC" block="Read %readADC"
-    //% weight=75
+    //% weight=60
     export function ReadADC(ReadADC:readADC): number{ 
             let ADCValue:number;
 
@@ -173,7 +175,7 @@ namespace iBIT {
      */
     //% blockId="ibit_Servo" block="Servo %servo|Degree %Degree"
     //% Degree.min=0 Degree.max=180
-    //% weight=70
+    //% weight=75
     export function Servo(Servo:servo, Degree:number): void{
         if(Servo == servo.SV1){
             pins.servoWritePin(AnalogPin.P8, Degree)
@@ -181,14 +183,12 @@ namespace iBIT {
         if(Servo == servo.SV2){
             pins.servoWritePin(AnalogPin.P12, Degree)
         }
-
     }
     
      /**
      * Control Servo 1 or 2 set to freedom
-     * 
      */
-    //% blockId="ibit_ServoStop" block="ServoStop %servo"
+    //% blockId="ibit_ServoStop" block="Servo Stop %servo"
     //% weight=70
     export function ServoStop(Servo:servo): void{
         if(Servo == servo.SV1){
@@ -198,7 +198,6 @@ namespace iBIT {
            pins.servoSetPulse(AnalogPin.P12, 0)
         }
     }
-
 
     /**MotorCH set Motor Channel and Direction. The speed motor is adjustable between 0 to 100.   
       * @param Speed percent of maximum Speed, eg: 50
