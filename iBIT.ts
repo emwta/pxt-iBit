@@ -183,6 +183,21 @@ namespace iBIT {
         }
 
     }
+    
+     /**
+     * Control Servo 1 or 2 set to freedom
+     * 
+     */
+    //% blockId="ibit_ServoStop" block="ServoStop %servo"
+    //% weight=70
+    export function ServoStop(Servo:servo): void{
+        if(Servo == servo.SV1){
+           pins.servoSetPulse(AnalogPin.P8, 0)
+        }
+        if(Servo == servo.SV2){
+           pins.servoSetPulse(AnalogPin.P12, 0)
+        }
+    }
 
 
     /**MotorCH set Motor Channel and Direction. The speed motor is adjustable between 0 to 100.   
