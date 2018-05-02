@@ -33,9 +33,9 @@ Use iBIT's motor block to drives motor forward and backward. The speed motor is 
 
 
 ```blocks
-iBIT.Motor(ibitmotor.Forward, 100)
+iBIT.Motor(ibitMotor.Forward, 100)
 
-iBIT.Motor(ibitmotor.Backward, 100)
+iBIT.Motor(ibitMotor.Backward, 100)
 ```
 
 ### Spin Block
@@ -46,9 +46,9 @@ Spin block is used to control both motors separately. For example, choose one mo
 * Speed is an integer value between `0 - 100`
 
 ```blocks
-iBIT.Spin(ibitspin.Left, 100)
+iBIT.Spin(ibitSpin.Left, 100)
 
-iBIT.Spin(ibitspin.Right, 100)
+iBIT.Spin(ibitSpin.Right, 100)
 ```
 
 ### Turn Block
@@ -59,9 +59,9 @@ The Turn block is used to to control the robot movment by turning. The one motor
 * Speed is an integer value between `0 - 100`
 
 ```blocks
-iBIT.Turn(ibitturn.Left, 100)
+iBIT.Turn(ibitTurn.Left, 100)
 
-iBIT.Turn(ibitturn.Right, 100)
+iBIT.Turn(ibitTurn.Right, 100)
 ```
 
 ### Motor Stop Block 
@@ -79,7 +79,7 @@ Use this block for control the servo's moving degree from 0 to 180
 * Degree is an integer value between `0 - 180`
 
 ```blocks
-iBIT.Servo(ibitservo.SV1, 90)
+iBIT.Servo(ibitServo.SV1, 90)
 ```
 
 ### ReadAD Block
@@ -91,7 +91,7 @@ This block is used to read the analog input data from the I2C-based ADC integrat
 * Get the analog value to set the conditions for the robot's mission.
 
 ```block
-iBIT.ReadADC(ibitreadADC.ADC0)
+iBIT.ReadADC(ibitReadADC.ADC0)
 ```
 
 ### Example
@@ -99,7 +99,7 @@ iBIT.ReadADC(ibitreadADC.ADC0)
 * Read the analog input 0 and display the conversion data on micro:bit. User can change the analog channel any time.
 
 ```blocks
-basic.showNumber(iBIT.ReadADC(ibitreadADC.ADC0))
+basic.showNumber(iBIT.ReadADC(ibitReadADC.ADC0))
 ```
 
 * Drive the motors with Forward and Backward by counting speed `0 - 100`
@@ -108,11 +108,11 @@ basic.showNumber(iBIT.ReadADC(ibitreadADC.ADC0))
 let speed = 0
 basic.forever(() => {
     for (let speed = 0; speed <= 100; speed++) {
-        iBIT.Motor(ibitmotor.Forward, speed)
+        iBIT.Motor(ibitMotor.Forward, speed)
         basic.pause(50)
     }
     for (let speed = 0; speed <= 100; speed++) {
-        iBIT.Motor(ibitmotor.Backward, speed)
+        iBIT.Motor(ibitMotor.Backward, speed)
         basic.pause(50)
     }
 })
@@ -122,10 +122,10 @@ basic.forever(() => {
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
-    iBIT.Turn(ibitturn.Left, 50)
+    iBIT.Turn(ibitTurn.Left, 50)
 })
 input.onButtonPressed(Button.B, () => {
-    iBIT.Turn(ibitturn.Right, 50)
+    iBIT.Turn(ibitTurn.Right, 50)
 })
 ```
 
@@ -133,10 +133,10 @@ input.onButtonPressed(Button.B, () => {
 
 ```blocks
 input.onButtonPressed(Button.A, () => {
-    iBIT.Spin(ibitspin.Left, 50)
+    iBIT.Spin(ibitSpin.Left, 50)
 })
 input.onButtonPressed(Button.B, () => {
-    iBIT.Spin(ibitspin.Right, 50)
+    iBIT.Spin(ibitSpin.Right, 50)
 })
 ```
 
@@ -145,8 +145,8 @@ input.onButtonPressed(Button.B, () => {
 ```blocks
 basic.forever(() => {
     for (let Degree = 0; Degree <= 180; Degree++) {
-        iBIT.Servo(ibitservo.SV1, Degree)
-        iBIT.Servo(ibitservo.SV2, Degree)
+        iBIT.Servo(ibitServo.SV1, Degree)
+        iBIT.Servo(ibitServo.SV2, Degree)
         basic.pause(10)
         while (Degree == 180) {
             Degree = 0
