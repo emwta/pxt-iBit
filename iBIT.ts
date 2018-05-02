@@ -1,7 +1,7 @@
 /**
   * Enumeration of Motor.
   */
-enum motor {
+enum ibitmotor {
     //% block="Forward \u21c8"
     Forward,
     //% block="Backward \u21ca"
@@ -11,7 +11,7 @@ enum motor {
 /**
   * Enumeration of TurnMotor.
   */
-enum turn {
+enum ibitturn {
     //% block="Left \u27f5"
     Left,
     //% block="Right \u27f6"
@@ -21,7 +21,7 @@ enum turn {
 /**
   * Enumeration of SpinMotor.
   */
-enum spin {
+enum ibitspin {
     //% block="Left \u21f5"
     Left,
     //% block="Right \u21c5"
@@ -31,7 +31,7 @@ enum spin {
 /**
   * Enumeration of ReadADC.
   */
-enum readADC {
+enum ibitreadADC {
     //% block="ADC 0"
     ADC0 = 132,
     //% block="ADC 1"
@@ -53,14 +53,14 @@ enum readADC {
 /**
   * Enumeration of Servo.
   */
-enum servo{
+enum ibitservo{
     //% block="1"
     SV1,
     //% block="2"
     SV2
 }
 
-enum motorCH {
+enum ibitmotorCH {
     //% block="1"
     M1,
     //% block="2"
@@ -81,13 +81,13 @@ namespace iBIT {
     //% weight=95
     export function Motor(Motor: motor, speed: number): void {  
         let motorspeed = pins.map(speed,0,100,0,1023)     
-        if (Motor == motor.Forward) {
+        if (Motor == ibitmotor.Forward) {
            pins.digitalWritePin(DigitalPin.P13, 1)
            pins.analogWritePin(AnalogPin.P14, motorspeed)
            pins.digitalWritePin(DigitalPin.P15, 0)
            pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
-        if (Motor == motor.Backward) {
+        if (Motor == ibitmotor.Backward) {
            pins.digitalWritePin(DigitalPin.P13, 0)
            pins.analogWritePin(AnalogPin.P14, motorspeed)
            pins.digitalWritePin(DigitalPin.P15, 1)
@@ -103,13 +103,13 @@ namespace iBIT {
     //% weight=90
     export function Turn(Turn: turn, speed: number): void {       
       let motorspeed = pins.map(speed,0,100,0,1023)      
-        if (Turn == turn.Left) {           
+        if (Turn == ibitturn.Left) {           
             pins.digitalWritePin(DigitalPin.P13, 1)
             pins.analogWritePin(AnalogPin.P14, 0)
             pins.digitalWritePin(DigitalPin.P15, 0)
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
-        if (Turn == turn.Right) {
+        if (Turn == ibitturn.Right) {
             pins.digitalWritePin(DigitalPin.P13, 1)
             pins.analogWritePin(AnalogPin.P14, motorspeed)
             pins.digitalWritePin(DigitalPin.P15, 0)
@@ -125,13 +125,13 @@ namespace iBIT {
     //% weight=85
     export function Spin(Spin: spin, speed: number): void {   
         let motorspeed = pins.map(speed,0,100,0,1023)    
-        if (Spin == spin.Left) {
+        if (Spin == ibitspin.Left) {
             pins.digitalWritePin(DigitalPin.P13, 0)
             pins.analogWritePin(AnalogPin.P14, motorspeed)
             pins.digitalWritePin(DigitalPin.P15, 0)
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
-        if (Spin == spin.Right) {
+        if (Spin == ibitspin.Right) {
             pins.digitalWritePin(DigitalPin.P13, 1)
             pins.analogWritePin(AnalogPin.P14, motorspeed)
             pins.digitalWritePin(DigitalPin.P15, 1)
@@ -157,7 +157,7 @@ namespace iBIT {
       */
     //% blockId="ibit_readADC" block="Read %readADC"
     //% weight=60
-    export function ReadADC(ReadADC:readADC): number{ 
+    export function ReadADC(ReadADC:ibitreadADC): number{ 
             let ADCValue:number;
 
             pins.i2cWriteNumber(
@@ -177,10 +177,10 @@ namespace iBIT {
     //% Degree.min=0 Degree.max=180
     //% weight=75
     export function Servo(Servo:servo, Degree:number): void{
-        if(Servo == servo.SV1){
+        if(Servo == ibitservo.SV1){
             pins.servoWritePin(AnalogPin.P8, Degree)
         }
-        if(Servo == servo.SV2){
+        if(Servo == ibitservo.SV2){
             pins.servoWritePin(AnalogPin.P12, Degree)
         }
     }
@@ -191,10 +191,10 @@ namespace iBIT {
     //% blockId="ibit_ServoStop" block="Servo Stop %servo"
     //% weight=70
     export function ServoStop(Servo:servo): void{
-        if(Servo == servo.SV1){
+        if(Servo == ibitservo.SV1){
            pins.servoSetPulse(AnalogPin.P8, 0)
         }
-        if(Servo == servo.SV2){
+        if(Servo == ibitservo.SV2){
            pins.servoSetPulse(AnalogPin.P12, 0)
         }
     }
@@ -208,19 +208,19 @@ namespace iBIT {
     export function MotorCH(Channel:motorCH, Direction:motor, Speed:number): void {
         let motorspeed = pins.map(Speed, 0, 100, 0, 1023)  
         
-        if (Channel == motorCH.M1 && Direction == motor.Forward) {
+        if (Channel == ibitmotorCH.M1 && Direction == motor.Forward) {
             pins.digitalWritePin(DigitalPin.P13, 1)
             pins.analogWritePin(AnalogPin.P14, motorspeed)            
         }
-        else if (Channel == motorCH.M2 && Direction == motor.Forward) {
+        else if (Channel == ibitmotorCH.M2 && Direction == motor.Forward) {
             pins.digitalWritePin(DigitalPin.P15, 0)
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
-        else if (Channel == motorCH.M1 && Direction == motor.Backward) {
+        else if (Channel == ibitmotorCH.M1 && Direction == motor.Backward) {
             pins.digitalWritePin(DigitalPin.P13, 0)
             pins.analogWritePin(AnalogPin.P14, motorspeed)  
         }
-        else if (Channel == motorCH.M2 && Direction == motor.Backward) {
+        else if (Channel == ibitmotorCH.M2 && Direction == motor.Backward) {
             pins.digitalWritePin(DigitalPin.P15, 1)
             pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
