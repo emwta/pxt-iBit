@@ -57,7 +57,7 @@ The Turn block is used to to control the robot movment by turning. The one motor
 * Speed is an integer value between `0 - 100`
 
 ```blocks
-
+iBIT.Turn(ibitturn.Left, 100)
 
 iBIT.Turn(ibitturn.Right, 100)
 ```
