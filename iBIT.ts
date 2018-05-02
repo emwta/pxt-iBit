@@ -87,7 +87,12 @@ namespace iBIT {
            pins.digitalWritePin(DigitalPin.P15, 0)
            pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
-        
+        if (Motor == ibitmotor.Backward) {
+           pins.digitalWritePin(DigitalPin.P13, 0)
+           pins.analogWritePin(AnalogPin.P14, motorspeed)
+           pins.digitalWritePin(DigitalPin.P15, 1)
+           pins.analogWritePin(AnalogPin.P16, motorspeed)
+        }
     }
 
      /**Turn Block set direction TurnLeft or TurnRight. The speed motor is adjustable between 0 to 100.
