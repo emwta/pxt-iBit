@@ -76,7 +76,7 @@ namespace iBIT {
     /**Motor Block to drives motor forward and backward. The speed motor is adjustable between 0 to 100.
       * @param speed percent of maximum speed, eg: 50
       */
-    //% blockId="ibit_Motor" block="Motor %motor|speed %speed"
+    //% blockId="ibit_Motor" block="Motor %ibitmotor|speed %speed"
     //% speed.min=0 speed.max=100
     //% weight=95
     export function Motor(Motor: motor, speed: number): void {  
@@ -98,7 +98,7 @@ namespace iBIT {
      /**Turn Block set direction TurnLeft or TurnRight. The speed motor is adjustable between 0 to 100.
       * @param speed percent of maximum speed, eg: 50
       */
-    //% blockId="ibit_Turn" block="Turn %motor|speed %speed"
+    //% blockId="ibit_Turn" block="Turn %ibitmotor|speed %speed"
     //% speed.min=0 speed.max=100
     //% weight=90
     export function Turn(Turn: turn, speed: number): void {       
@@ -120,7 +120,7 @@ namespace iBIT {
     /**Spin Block set direction SpinLeft or SpinRight. The speed motor is adjustable between 0 to 100.  
       * @param speed percent of maximum speed, eg: 50
       */
-    //% blockId="ibit_Spin" block="Spin %motor|speed %speed"
+    //% blockId="ibit_Spin" block="Spin %ibitmotor|speed %speed"
     //% speed.min=0 speed.max=100
     //% weight=85
     export function Spin(Spin: spin, speed: number): void {   
@@ -155,7 +155,7 @@ namespace iBIT {
     /**ReadADC for read analog sensor, Select ADC channel 0-7. 
       *
       */
-    //% blockId="ibit_readADC" block="Read %readADC"
+    //% blockId="ibit_readADC" block="Read %ibitreadADC"
     //% weight=60
     export function ReadADC(ReadADC:ibitreadADC): number{ 
             let ADCValue:number;
@@ -173,7 +173,7 @@ namespace iBIT {
      * Control Servo 1 or 2 set degree between 0 - 180
      * @param Degree servo degree 0-180, eg: 90
      */
-    //% blockId="ibit_Servo" block="Servo %servo|Degree %Degree"
+    //% blockId="ibit_Servo" block="Servo %ibitservo|Degree %Degree"
     //% Degree.min=0 Degree.max=180
     //% weight=75
     export function Servo(Servo:servo, Degree:number): void{
@@ -202,7 +202,7 @@ namespace iBIT {
     /**MotorCH set Motor Channel and Direction. The speed motor is adjustable between 0 to 100.   
       * @param Speed percent of maximum Speed, eg: 50
       */
-    //% blockId="ibit_MotorCH" block="Motor %motorCH | Direction %Motor | Speed %Speed"
+    //% blockId="ibit_MotorCH" block="Motor %ibitmotorCH | Direction %ibitMotor | Speed %Speed"
     //% Speed.min=0 Speed.max=100
     //% weight=100
     export function MotorCH(Channel:motorCH, Direction:motor, Speed:number): void {
