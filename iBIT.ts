@@ -202,10 +202,10 @@ namespace iBIT {
     /**MotorCH set Motor Channel and Direction. The speed motor is adjustable between 0 to 100.   
       * @param Speed percent of maximum Speed, eg: 50
       */
-    //% blockId="ibit_MotorCH" block="Motor %ibitMotorCH | Direction %ibitMotor | Speed %Speed"
+    //% blockId="ibit_MotorCH" block="setMotor %ibitMotorCH | Direction %ibitMotor | Speed %Speed"
     //% Speed.min=0 Speed.max=100
     //% weight=100
-    export function MotorCH(Channel:ibitMotorCH, Direction:ibitMotor, Speed:number): void {
+    export function setMotor(Channel:ibitMotorCH, Direction:ibitMotor, Speed:number): void {
         let motorspeed = pins.map(Speed, 0, 100, 0, 1023)  
         
         if (Channel == ibitMotorCH.M1 && Direction == ibitMotor.Forward) {
