@@ -1,43 +1,43 @@
 input.onButtonPressed(Button.A, () => {
-    IBIT.Turn(turn.Left, 50)
+    IBIT.Turn(ibitturn.Left, 50)
     basic.pause(1000)
-    IBIT.Turn(turn.Right, 50)
+    IBIT.Turn(ibitturn.Right, 50)
     basic.pause(1000)
 })
 input.onButtonPressed(Button.B, () => {
-    IBIT.Spin(spin.Left, 50)
+    IBIT.Spin(ibitspin.Left, 50)
     basic.pause(1000)
-    IBIT.Spin(spin.Right, 50)
+    IBIT.Spin(ibitspin.Right, 50)
     basic.pause(1000)
 })
 input.onButtonPressed(Button.AB, () => {
-    basic.showNumber(IBIT.ReadADC(readADC.ADC0))
-    basic.showNumber(IBIT.ReadADC(readADC.ADC1))
-    basic.showNumber(IBIT.ReadADC(readADC.ADC2))
-    basic.showNumber(IBIT.ReadADC(readADC.ADC3))
-    basic.showNumber(IBIT.ReadADC(readADC.ADC4))
-    basic.showNumber(IBIT.ReadADC(readADC.ADC5))
-    basic.showNumber(IBIT.ReadADC(readADC.ADC6))
-    basic.showNumber(IBIT.ReadADC(readADC.ADC7))
+    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC0))
+    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC1))
+    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC2))
+    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC3))
+    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC4))
+    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC5))
+    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC6))
+    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC7))
 })
 
 basic.forever(() => {
     for (let Speed = 0; Speed <= 100; Speed++) {
-        IBIT.Motor(motor.Forward, Speed)
+        IBIT.Motor(ibitmotor.Forward, Speed)
         basic.pause(50)
     }
     basic.pause(1000)
     for (let Speed = 0; Speed <= 100; Speed++) {
-        IBIT.Motor(motor.Backward, Speed)
+        IBIT.Motor(ibitmotor.Backward, Speed)
         basic.pause(50)
     }
     basic.pause(1000)
     IBIT.MotorStop()
     for (let Degree = 0; Degree <= 180; Degree++) {
-        IBIT.Servo(servo.SV1, Degree)
-        IBIT.Servo(servo.SV2, Degree)
+        IBIT.Servo(ibitservo.SV1, Degree)
+        IBIT.Servo(ibitservo.SV2, Degree)
         basic.pause(30)
     }
-    IBIT.Servo(servo.SV1, 0)
-    IBIT.Servo(servo.SV2, 0)
+    IBIT.Servo(ibitservo.SV1, 0)
+    IBIT.Servo(ibitservo.SV2, 0)
 })
