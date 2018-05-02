@@ -1,43 +1,39 @@
-input.onButtonPressed(Button.A, () => {
-    IBIT.Turn(ibitturn.Left, 50)
-    basic.pause(1000)
-    IBIT.Turn(ibitturn.Right, 50)
-    basic.pause(1000)
-})
-input.onButtonPressed(Button.B, () => {
-    IBIT.Spin(ibitspin.Left, 50)
-    basic.pause(1000)
-    IBIT.Spin(ibitspin.Right, 50)
-    basic.pause(1000)
-})
+let DelayTime = 0
+let MotorSpeed = 0
 input.onButtonPressed(Button.AB, () => {
-    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC0))
-    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC1))
-    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC2))
-    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC3))
-    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC4))
-    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC5))
-    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC6))
-    basic.showNumber(IBIT.ReadADC(ibitreadADC.ADC7))
+    basic.showNumber(iBIT.ReadADC(ibitreadADC.ADC0))
+    basic.showNumber(iBIT.ReadADC(ibitreadADC.ADC1))
+    basic.showNumber(iBIT.ReadADC(ibitreadADC.ADC2))
+    basic.showNumber(iBIT.ReadADC(ibitreadADC.ADC3))
+    basic.showNumber(iBIT.ReadADC(ibitreadADC.ADC4))
+    basic.showNumber(iBIT.ReadADC(ibitreadADC.ADC5))
+    basic.showNumber(iBIT.ReadADC(ibitreadADC.ADC6))
+    basic.showNumber(iBIT.ReadADC(ibitreadADC.ADC7))
 })
-
-basic.forever(() => {
-    for (let Speed = 0; Speed <= 100; Speed++) {
-        IBIT.Motor(ibitmotor.Forward, Speed)
-        basic.pause(50)
-    }
-    basic.pause(1000)
-    for (let Speed = 0; Speed <= 100; Speed++) {
-        IBIT.Motor(ibitmotor.Backward, Speed)
-        basic.pause(50)
-    }
-    basic.pause(1000)
-    IBIT.MotorStop()
-    for (let Degree = 0; Degree <= 180; Degree++) {
-        IBIT.Servo(ibitservo.SV1, Degree)
-        IBIT.Servo(ibitservo.SV2, Degree)
-        basic.pause(30)
-    }
-    IBIT.Servo(ibitservo.SV1, 0)
-    IBIT.Servo(ibitservo.SV2, 0)
-})
+MotorSpeed = 50
+DelayTime = 1000
+iBIT.MotorCH(ibitmotorCH.M1, ibitmotor.Forward, MotorSpeed)
+basic.pause(DelayTime)
+iBIT.MotorCH(ibitmotorCH.M1, ibitmotor.Backward, MotorSpeed)
+basic.pause(DelayTime)
+iBIT.MotorCH(ibitmotorCH.M2, ibitmotor.Forward, MotorSpeed)
+basic.pause(DelayTime)
+iBIT.MotorCH(ibitmotorCH.M2, ibitmotor.Backward, MotorSpeed)
+basic.pause(DelayTime)
+iBIT.Motor(ibitmotor.Forward, MotorSpeed)
+basic.pause(DelayTime)
+iBIT.Motor(ibitmotor.Backward, MotorSpeed)
+basic.pause(DelayTime)
+iBIT.Spin(ibitspin.Left, MotorSpeed)
+basic.pause(DelayTime)
+iBIT.Spin(ibitspin.Right, MotorSpeed)
+basic.pause(DelayTime)
+iBIT.MotorStop()
+iBIT.Servo(ibitservo.SV1, MotorSpeed)
+iBIT.Servo(ibitservo.SV2, MotorSpeed)
+basic.pause(1500)
+iBIT.Servo(ibitservo.SV1, 180)
+iBIT.Servo(ibitservo.SV2, 180)
+basic.pause(1500)
+iBIT.ServoStop(ibitservo.SV1)
+iBIT.ServoStop(ibitservo.SV2)
