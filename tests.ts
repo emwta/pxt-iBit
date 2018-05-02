@@ -12,13 +12,13 @@ input.onButtonPressed(Button.AB, () => {
 })
 MotorSpeed = 50
 DelayTime = 1000
-iBIT.MotorCH(ibitMotorCH.M1, ibitMotor.Forward, MotorSpeed)
+iBIT.setMotor(ibitMotorCH.M1, ibitMotor.Forward, MotorSpeed)
 basic.pause(DelayTime)
-iBIT.MotorCH(ibitMotorCH.M1, ibitMotor.Backward, MotorSpeed)
+iBIT.setMotor(ibitMotorCH.M1, ibitMotor.Backward, MotorSpeed)
 basic.pause(DelayTime)
-iBIT.MotorCH(ibitMotorCH.M2, ibitMotor.Forward, MotorSpeed)
+iBIT.setMotor(ibitMotorCH.M2, ibitMotor.Forward, MotorSpeed)
 basic.pause(DelayTime)
-iBIT.MotorCH(ibitMotorCH.M2, ibitMotor.Backward, MotorSpeed)
+iBIT.setMotor(ibitMotorCH.M2, ibitMotor.Backward, MotorSpeed)
 basic.pause(DelayTime)
 iBIT.Motor(ibitMotor.Forward, MotorSpeed)
 basic.pause(DelayTime)
