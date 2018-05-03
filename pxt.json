@@ -1,6 +1,6 @@
 {
     "name": "iBIT",
-    "version": "1.2.10",
+    "version": "1.0.3",
     "description": "A iBit package for pxt-microbit",
     "license": "MIT",
     "dependencies": {
@@ -12,7 +12,6 @@
     ],
     "testFiles": [
         "tests.ts"
-    ],
-    "yotta": {},
+    ],    
     "public": true
 }
