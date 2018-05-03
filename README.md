@@ -4,7 +4,7 @@ powered by micro:bit
 
 ![ibitbot](https://raw.githubusercontent.com/emwta/pxt-iBit/master/icon.png)  
 
-The package adds support for the iBIT conroller board from Innovative Experiment [INEX](https://inex.co.th).
+The package adds support for the [iBIT](https://inex.co.th/shop/ibit.html) conroller board from Innovative Experiment [INEX](https://inex.co.th).
 
 ### micro:bit Pin Assignment
 
@@ -88,10 +88,6 @@ This block is used to read the analog input data from the I2C-based ADC integrat
 * Select analog channel from `ADC0 - ADC7` for reading the analog sensor.
 * Get the analog value to set the conditions for the robot's mission.
 
-```block
-iBIT.ReadADC(ibitReadADC.ADC0)
-```
-
 ### Example
 
 * Read the analog input 0 and display the conversion data on micro:bit. User can change the analog channel any time.
@@ -153,4 +149,24 @@ basic.forever(() => {
 })
 ```
 
+* Example for set Servo Stop or set freedom servo.
+
+```blocks
+input.onButtonPressed(Button.A, () => {
+    iBIT.Servo(ibitServo.SV1, 90)
+})
+input.onButtonPressed(Button.B, () => {
+    iBIT.ServoStop(ibitServo.SV1)
+})
+```
+
+
+
+## License
+
+MIT
+
+## Supported targets
+
+* for PXT/microbit
 
