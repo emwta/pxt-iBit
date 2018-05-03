@@ -1,10 +1,10 @@
 {
   "name": "pxt-iBIT",
-  "version": "1.2.10",
+  "version": "1.2.15",
   "dependencies": {},
   "devDependencies": {
     "pxt": "^0.3.0",
-    "pxt-microbit": "^0.9.76"
+    "pxt-microbit": "^0.9.77"
   },
   "scripts": {
     "pxt:init": "pxt target microbit",
