@@ -3,13 +3,15 @@
     "version": "1.0.5",
     "description": "A iBit package for pxt-microbit",
     "license": "MIT",
-    "dependencies": {},
+    "dependencies": {          
+    },
     "files": [
         "README.md",
-        "iBIT.ts"
+        "iBIT.ts"        
     ],
     "testFiles": [
         "tests.ts"
     ],
+    "yotta": {},
     "public": true
 }
