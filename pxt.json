@@ -3,10 +3,7 @@
     "version": "1.0.15",
     "description": "A iBit package for pxt-microbit",
     "license": "MIT",
-    "dependencies": {
-        "core": "*",
-        "bluetooth":"*"
-    },
+    "dependencies": {},
     "files": [
         "README.md",
         "iBIT.ts"
