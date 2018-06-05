@@ -13,6 +13,5 @@
     "testFiles": [
         "tests.ts"
     ],
-    "yotta": {},
     "public": true
 }
