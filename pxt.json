@@ -4,7 +4,8 @@
     "description": "A iBit package for pxt-microbit",
     "license": "MIT",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "bluetooth":"*"
     },
     "files": [
         "README.md",
