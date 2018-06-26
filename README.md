@@ -1,10 +1,10 @@
-# iBIT block package for iBIT robot kit
+# iBIT block package for i-BIT robot kit
 
 powered by micro:bit
 
-![ibitbot](https://raw.githubusercontent.com/emwta/pxt-iBit/master/icon.png)  
+![i-BIT](https://raw.githubusercontent.com/emwta/pxt-iBit/master/icon.png)  
 
-The package adds support for the [iBIT](https://inex.co.th/shop/ibit.html) conroller board from Innovative Experiment [INEX](https://inex.co.th).
+The package adds support for the [i-BIT](https://inex.co.th/shop/ibit.html) conroller board from Innovative Experiment [INEX](https://inex.co.th).
 
 ### micro:bit Pin Assignment
 
