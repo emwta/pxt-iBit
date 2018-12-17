@@ -2,9 +2,18 @@
   * Enumeration of Motor.
   */
 enum ibitMotor {
-    //% block="Forward \u21c8"
+    //% block="\u21c8"
     Forward,
-    //% block="Backward \u21ca"
+    //% block=" \u21ca"
+    Backward
+}
+/**
+  * Enumeration of Motor2.
+  */
+enum ibitMotor2 {
+    //% block="\u21c8"
+    Forward,
+    //% block=" \u21ca"
     Backward
 }
 
@@ -81,6 +90,11 @@ namespace iBIT {
     //% weight=95
     export function Motor(Motor: ibitMotor, speed: number): void {  
         let motorspeed = pins.map(speed,0,100,0,1023)     
+        pins.analogWritePin(AnalogPin.P14, 0)
+        pins.analogWritePin(AnalogPin.P16, 0)
+        pins.analogSetPeriod(AnalogPin.P14, 50)
+        pins.analogSetPeriod(AnalogPin.P16, 50)
+        
         if (Motor == ibitMotor.Forward) {
            pins.digitalWritePin(DigitalPin.P13, 1)
            pins.analogWritePin(AnalogPin.P14, motorspeed)
@@ -94,7 +108,34 @@ namespace iBIT {
            pins.analogWritePin(AnalogPin.P16, motorspeed)
         }
     }
-
+     /**Motor Block to drives motor forward and backward. The speed motor is adjustable between 0 to 100.
+      * @param speed percent of maximum speed, eg: 50
+      */
+    //% blockId="ibit_Motor2" block="Motor2 %ibitMotor|speed1 %speed|speed2 %speed"
+    //% speed.min=0 speed.max=100
+    //% weight=100
+    export function Motor2(Motor: ibitMotor, speed1: number,speed2:number): void {  
+        let motorspeed1 = pins.map(speed1,0,100,0,1023)
+        let motorspeed2 = pins.map(speed2,0,100,0,1023)
+        pins.analogWritePin(AnalogPin.P14, 0)
+        pins.analogWritePin(AnalogPin.P16, 0)
+        pins.analogSetPeriod(AnalogPin.P14, 50)
+        pins.analogSetPeriod(AnalogPin.P16, 50)
+        
+        if (Motor == ibitMotor.Forward) {
+           pins.digitalWritePin(DigitalPin.P13, 1)
+           pins.analogWritePin(AnalogPin.P14, motorspeed1)
+           pins.digitalWritePin(DigitalPin.P15, 0)
+           pins.analogWritePin(AnalogPin.P16, motorspeed2)
+        }
+        if (Motor == ibitMotor.Backward) {
+           pins.digitalWritePin(DigitalPin.P13, 0)
+           pins.analogWritePin(AnalogPin.P14, motorspeed1)
+           pins.digitalWritePin(DigitalPin.P15, 1)
+           pins.analogWritePin(AnalogPin.P16, motorspeed2)
+        }
+    }
+ 
      /**Turn Block set direction TurnLeft or TurnRight. The speed motor is adjustable between 0 to 100.
       * @param speed percent of maximum speed, eg: 50
       */
@@ -103,7 +144,12 @@ namespace iBIT {
     //% weight=90
     export function Turn(Turn: ibitTurn, speed: number): void {       
       let motorspeed = pins.map(speed,0,100,0,1023)      
-        if (Turn == ibitTurn.Left) {           
+        pins.analogWritePin(AnalogPin.P14, 0)
+        pins.analogWritePin(AnalogPin.P16, 0)
+        pins.analogSetPeriod(AnalogPin.P14, 50)
+        pins.analogSetPeriod(AnalogPin.P16, 50)
+        
+      if (Turn == ibitTurn.Left) {           
             pins.digitalWritePin(DigitalPin.P13, 1)
             pins.analogWritePin(AnalogPin.P14, 0)
             pins.digitalWritePin(DigitalPin.P15, 0)
@@ -124,7 +170,12 @@ namespace iBIT {
     //% speed.min=0 speed.max=100
     //% weight=85
     export function Spin(Spin: ibitSpin, speed: number): void {   
-        let motorspeed = pins.map(speed,0,100,0,1023)    
+        let motorspeed = pins.map(speed,0,100,0,1023)
+        pins.analogWritePin(AnalogPin.P14, 0)
+        pins.analogWritePin(AnalogPin.P16, 0)
+        pins.analogSetPeriod(AnalogPin.P14, 50)
+        pins.analogSetPeriod(AnalogPin.P16, 50)
+        
         if (Spin == ibitSpin.Left) {
             pins.digitalWritePin(DigitalPin.P13, 0)
             pins.analogWritePin(AnalogPin.P14, motorspeed)
@@ -207,6 +258,10 @@ namespace iBIT {
     //% weight=100
     export function setMotor(Channel:ibitMotorCH, Direction:ibitMotor, Speed:number): void {
         let motorspeed = pins.map(Speed, 0, 100, 0, 1023)  
+        pins.analogWritePin(AnalogPin.P14, 0)
+        pins.analogWritePin(AnalogPin.P16, 0)
+        pins.analogSetPeriod(AnalogPin.P14, 50)
+        pins.analogSetPeriod(AnalogPin.P16, 50)
         
         if (Channel == ibitMotorCH.M1 && Direction == ibitMotor.Forward) {
             pins.digitalWritePin(DigitalPin.P13, 1)
