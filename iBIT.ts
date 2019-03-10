@@ -2,18 +2,18 @@
   * Enumeration of Motor.
   */
 enum ibitMotor {
-    //% block="\u21c8"
+    //% block="Forward \u21c8"
     Forward,
-    //% block=" \u21ca"
+    //% block="Backward \u21ca"
     Backward
 }
 /**
   * Enumeration of Motor2.
   */
 enum ibitMotor2 {
-    //% block="\u21c8"
+    //% block="Forward \u21c8"
     Forward,
-    //% block=" \u21ca"
+    //% block="Backward \u21ca"
     Backward
 }
 
