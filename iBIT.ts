@@ -112,7 +112,7 @@ namespace iBIT {
       */
     //% blockId="ibit_Motor2" block="Motor2 %ibitMotor|speed1 %speed|speed2 %speed"
     //% speed.min=0 speed.max=100
-    //% weight=100
+    //% weight=99
     export function Motor2(Motor: ibitMotor, speed1: number, speed2: number): void {  
         let motorspeed1 = pins.map(speed1,0,100,0,1023)
         let motorspeed2 = pins.map(speed2,0,100,0,1023)
