@@ -110,7 +110,7 @@ namespace iBIT {
       * @param speed1 percent of maximum speed, eg: 50
       * @param speed2 percent of maximum speed, eg: 50
       */
-    //% blockId="ibit_Motor2" block="Motor2 %ibitMotor|speed1 %speed|speed2 %speed"
+    //% blockId="ibit_Motor2" block="Motor2 %ibitMotor|speed1 %speed1|speed2 %speed2"
     //% speed.min=0 speed.max=100
     //% weight=99
     export function Motor2(Motor: ibitMotor, speed1: number, speed2: number): void {  
