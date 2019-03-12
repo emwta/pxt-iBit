@@ -108,6 +108,7 @@ namespace iBIT {
     }
      /**Motor Block to drives motor forward and backward. The speed motor is adjustable between 0 to 100 and can adjustable speed 2 motors.
       * @param speed1 percent of maximum speed, eg: 50
+      * @param speed2 percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Motor2" block="Motor2 %ibitMotor|speed1 %speed|speed2 %speed"
     //% speed.min=0 speed.max=100
