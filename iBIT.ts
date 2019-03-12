@@ -90,8 +90,8 @@ namespace iBIT {
     //% weight=95
     export function Motor(Motor: ibitMotor, speed: number): void {  
         let motorspeed = pins.map(speed,0,100,0,1023) 
-        pins.analogSetPeriod(AnalogPin.P14, 1000)
-        pins.analogSetPeriod(AnalogPin.P16, 1000)
+        //pins.analogSetPeriod(AnalogPin.P14, 1000)
+        //pins.analogSetPeriod(AnalogPin.P16, 1000)
         
         if (Motor == ibitMotor.Forward) {
            pins.digitalWritePin(DigitalPin.P13, 1)
@@ -108,7 +108,6 @@ namespace iBIT {
     }
      /**Motor Block to drives motor forward and backward. The speed motor is adjustable between 0 to 100 and can adjustable speed 2 motors.
       * @param speed1 percent of maximum speed, eg: 50
-      * @param speed2 percent of maximum speed, eg: 50
       */
     //% blockId="ibit_Motor2" block="Motor2 %ibitMotor|speed1 %speed|speed2 %speed"
     //% speed.min=0 speed.max=100
@@ -116,8 +115,8 @@ namespace iBIT {
     export function Motor2(Motor: ibitMotor, speed1: number, speed2: number): void {  
         let motorspeed1 = pins.map(speed1,0,100,0,1023)
         let motorspeed2 = pins.map(speed2,0,100,0,1023)
-        pins.analogSetPeriod(AnalogPin.P14, 1000)
-        pins.analogSetPeriod(AnalogPin.P16, 1000)
+        //pins.analogSetPeriod(AnalogPin.P14, 1000)
+        //pins.analogSetPeriod(AnalogPin.P16, 1000)
         
         if (Motor == ibitMotor.Forward) {
            pins.digitalWritePin(DigitalPin.P13, 1)
@@ -141,8 +140,8 @@ namespace iBIT {
     //% weight=90
     export function Turn(Turn: ibitTurn, speed: number): void {       
       let motorspeed = pins.map(speed,0,100,0,1023)  
-        pins.analogSetPeriod(AnalogPin.P14, 1000)
-        pins.analogSetPeriod(AnalogPin.P16, 1000)
+        //pins.analogSetPeriod(AnalogPin.P14, 1000)
+        //pins.analogSetPeriod(AnalogPin.P16, 1000)
         
       if (Turn == ibitTurn.Left) {           
             pins.digitalWritePin(DigitalPin.P13, 1)
@@ -166,8 +165,8 @@ namespace iBIT {
     //% weight=85
     export function Spin(Spin: ibitSpin, speed: number): void {   
         let motorspeed = pins.map(speed,0,100,0,1023)
-        pins.analogSetPeriod(AnalogPin.P14, 1000)
-        pins.analogSetPeriod(AnalogPin.P16, 1000)
+        //pins.analogSetPeriod(AnalogPin.P14, 1000)
+        //pins.analogSetPeriod(AnalogPin.P16, 1000)
         
         if (Spin == ibitSpin.Left) {
             pins.digitalWritePin(DigitalPin.P13, 0)
@@ -246,13 +245,13 @@ namespace iBIT {
     /**MotorCH set Motor Channel and Direction. The speed motor is adjustable between 0 to 100.   
       * @param Speed percent of maximum Speed, eg: 50
       */
-    //% blockId="ibit_MotorCH" block="setMotor %C | Direction %ibitMotor | Speed %Speed"
+    //% blockId="ibit_MotorCH" block="setMotor %ibitMotorCH  | Direction %ibitMotor | Speed %Speed"
     //% Speed.min=0 Speed.max=100
     //% weight=100
     export function setMotor(Channel:ibitMotorCH, Direction:ibitMotor, Speed:number): void {
         let motorspeed = pins.map(Speed, 0, 100, 0, 1023) 
-        pins.analogSetPeriod(AnalogPin.P14, 1000)
-        pins.analogSetPeriod(AnalogPin.P16, 1000)
+        //pins.analogSetPeriod(AnalogPin.P14, 1000)
+        //pins.analogSetPeriod(AnalogPin.P16, 1000)
         
         if (Channel == ibitMotorCH.M1 && Direction == ibitMotor.Forward) {
             pins.digitalWritePin(DigitalPin.P13, 1)
