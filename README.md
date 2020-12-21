@@ -4,7 +4,7 @@ powered by micro:bit
 
 ![i-BIT](https://raw.githubusercontent.com/emwta/pxt-iBit/master/icon.png)  
 
-The package adds support for the [i-BIT](https://inex.co.th/shop/ibit.html) conroller board from Innovative Experiment [INEX](https://inex.co.th).
+The package adds support for the [i-BIT](https://inex.co.th/home/product/ibit/) conroller board from Innovative Experiment [INEX](https://inex.co.th).
 
 ### micro:bit Pin Assignment
 
