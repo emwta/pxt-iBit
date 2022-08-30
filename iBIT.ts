@@ -212,7 +212,6 @@ namespace iBIT {
     //% weight=62
     export function setADC_Address(ADDRESS : adcAddress) {
         ADC_ADDRESS=ADDRESS
-        serial.writeNumber(ADC_ADDRESS)
     }
     /**ReadADC for read analog sensor, Select ADC channel 0-7. 
       *
